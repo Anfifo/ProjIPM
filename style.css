@@ -1,8 +1,55 @@
 body{
-    font-family: Times;
+    background-color: black;
+    font-family: calibri;
     text-align: center;
 }
 
+
+h1{color: lightgreen;}
+
+h2{color: lightgrey;}
+
+#pageTopDiv{
+    border: 10px solid grey;
+    background-color: black;
+}
+
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+
+td:hover {background-color: white}
+
+
 #tableAlunos{
-    align-self: center;
+
+    background-color: hotpink;
+    text-align: center;
+    width: 33%;
+    margin: 0 auto;
+}
+
+
+#links{
+    text-align: left;
+    padding-left: 10%;
+}
+
+a:link{
+    color: #39FF14;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: blue;
 }
