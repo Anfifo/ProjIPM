@@ -1,55 +1,53 @@
+html{
+   background-color: rgb(10, 148, 180);
+}
+
 body{
-    background-color: black;
-    font-family: calibri;
-    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    color: lightgreen;
+}
+
+h2{
+    color: lightgrey;
 }
 
 
-h1{color: lightgreen;}
-
-h2{color: lightgrey;}
-
-#pageTopDiv{
-    border: 10px solid grey;
-    background-color: black;
-}
-
-
-table, th, td {
-    border-collapse: collapse;
+table.Alunos, table.Alunos th, table.Alunos td {
+    
     border: 1px solid black;
 }
 
 
-td:hover {background-color: white}
-
-
 #tableAlunos{
-
-    background-color: hotpink;
+    
     text-align: center;
     width: 33%;
     margin: 0 auto;
+    
 }
+
+table.Menus td{
+    width: 30%;
+}
+
+#Menus{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 250%;
+    padding-right: 3%;
+    text-align: center;
+}
+
 
 
 #links{
     text-align: left;
     padding-left: 10%;
+    
 }
 
-a:link{
-    color: #39FF14;
-}
 
-a:visited {
-    color: green;
-}
 
-a:hover {
-    color: red;
-}
-
-a:active {
-    color: blue;
-}
