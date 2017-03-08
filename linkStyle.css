@@ -3,9 +3,11 @@
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
+    right: 0;
+    top: 13%;
     background-color: rgba(0,0,0,0.7); /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 10px; /* Place content 60px from the top */
+    padding-top: 10px; /* Place content 10px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -14,6 +16,8 @@
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
+    right: 0;
+    top: 20%;
     background-color: rgba(0,0,0,0.7); /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 10px; /* Place content 60px from the top */
@@ -25,6 +29,8 @@
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
+    right: 0;
+    top: 25%;
     background-color: rgba(0,0,0,0.7); /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 10px; /* Place content 60px from the top */
@@ -36,6 +42,8 @@
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
+    right: 0;
+    top: 35%;
     background-color: rgba(0,0,0,0.7); /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 10px; /* Place content 60px from the top */

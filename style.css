@@ -1,53 +1,234 @@
 html{
-   background-color: rgb(10, 148, 180);
+   background: url(city.jpg) no-repeat center center fixed !important;
+   background-size: 100% 100% !important;
 }
 
 body{
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 h1{
-    color: lightgreen;
+    color: Cyan !important;
+    text-shadow:5px 5px 10px black !important;
+
+    text-align: center !important;
 }
 
 h2{
-    color: lightgrey;
+    color: lightgrey !important;
+    text-align: center !important;
 }
 
+#pageTopDiv{
+    padding-top: 4% !important;
+}
 
 table.Alunos, table.Alunos th, table.Alunos td {
-    
-    border: 1px solid black;
+
+    /*border: 1px solid black !important;*/
+    padding: 10px !important;
 }
+
 
 
 #tableAlunos{
-    
-    text-align: center;
-    width: 33%;
-    margin: 0 auto;
-    
+
+    text-align: center !important;
+    font-size: 20px;
+    width: 40% !important;
+    margin: 0 auto !important;
+
 }
 
 table.Menus td{
     width: 30%;
 }
 
-#Menus{
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 250%;
-    padding-right: 3%;
+
+/* Position for the Menu button */
+#Menu{
+    z-index: 2;
+
+    font-family: "Calibri", cursive, sans-serif !important;
+    font-size: 30px !important;
+    position: fixed;
+
+
+    opacity: 0.7;
+    top: 0;
+    right: 0;
+
+    height: 5%;
+    border: 1px solid white;
+    background-color: black;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.MenuButton{
+    background-color: inherit;
+    border: none;
+    color: inherit;
+
+
+    color: cyan;
+    font-family: "Calibri", cursive, sans-serif !important;
+    font-size: 20px;
+    text-align: center;
+    text-shadow:5px 5px 10px cyan;
+}
+
+.MenuMenuButton{
+    background-color: inherit;
+    color: inherit;
+    padding: ;
+/*    display: none;*/
+    border : none;
+    color: cyan;
+    font-family: "Calibri", cursive, sans-serif !important;
+    font-size: 30px;
+    text-align: center;
+    text-shadow:5px 5px 10px cyan;
+
+}
+
+/* Title for navigation Menu*/
+#MenuTitle{
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    background-color: black;
+    padding: 12% 8%;
+    text-align: center;
+    cursor:pointer;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    opacity: 0.7;
 }
 
 
 
-#links{
-    text-align: left;
-    padding-left: 10%;
-    
+
+
+/* Style and color for the menu links */
+#link_at a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+#link_mc a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+#link_proto a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+#link_au a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
 }
 
 
 
+
+
+
+
+/* Style and color for the menu sub-links */
+#at_inner a{
+    padding: 8px 30px 8px 50px;
+    font-size: 15px !important;
+    color: #818181 !important;
+    text-decoration: none !important;
+}
+
+#mc_inner a{
+    padding: 8px 30px 8px 50px;
+    font-size: 15px !important;
+    color: #818181 !important;
+    text-decoration: none !important;
+}
+
+#proto_inner a{
+    padding: 8px 30px 8px 50px;
+    font-size: 15px !important;
+    color: #818181 !important;
+    text-decoration: none !important;
+}
+
+#au_inner a{
+    padding: 8px 30px 8px 50px;
+    font-size: 15px !important;
+    color: #818181 !important;
+    text-decoration: none !important;
+}
+
+
+
+
+
+
+/* When you mouse over the navigation links, change their color */
+#link_at a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+
+}
+
+#link_mc a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+
+}
+
+#link_proto a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+
+}
+
+#link_au a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+
+}
+
+#close a:hover, .offcanvas a:focus{
+    color: #f1f1f1 !important;
+
+}
+
+#Menu span:hover, .offcanvas span:focus{
+    color: #f1f1f1;
+
+}
