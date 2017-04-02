@@ -1,5 +1,52 @@
 <!DOCTYPE html>
 <html>
+
+<!-- SRCIPT-WIZARDS TEST -->
+<script>
+    function does_a_fucking_print() {
+        console.log("Burguellets:" + sessionStorage.getItem("Burguellet") + "\n" + "Bitoque:" +
+        sessionStorage.getItem("Bitoque") + "\n" + "Esparguete à Bolonhesa:" +
+        sessionStorage.getItem("Esparguete à Bolonhesa") + "\n");
+    }
+</script>
+
+
+<!-- REGISTO DOS PEDIDOS -->
+<script>
+    function storeOrder(foodId) {
+        var foodCount = parseInt(sessionStorage.getItem(foodId));
+        sessionStorage.setItem(foodId, foodCount + 1);
+        updateOrderList();
+    }
+    
+</script>
+
+
+<script>
+    function updateOrderList() {
+        document.getElementById("lista de pedidos").innerHTML = "Bloco de Notas" + "<br />" +"Burguellets:" + sessionStorage.getItem("Burguellet") + "<br />" + "Bitoque:" + sessionStorage.getItem("Bitoque") + "<br />" + "Esparguete à Bolonhesa:" + sessionStorage.getItem("Esparguete à Bolonhesa") + "<br />";
+    }
+</script>
+
+
+<!-- INICIALIZAR "VETOR" DE PEDIDOS -->
+<script>    
+    function initializeDataStorage() {
+        sessionStorage.setItem("Burguellet",0);
+        sessionStorage.setItem("Bitoque",0);
+        sessionStorage.setItem("Esparguete à Bolonhesa",0);
+    }
+</script>
+
+
+
+
+
+
+
+
+
+<!-- HTML CODE -->
 <head>
     <title>Com.ISTo</title>
     
@@ -9,7 +56,7 @@
 </head>
 
 
-<body>
+<body onload="initializeDataStorage()">
 
 <!--TOP-->
     <div id="top" class="top"> 
@@ -27,10 +74,23 @@
                     <p>(Toque no nome para mais info)</p>
                     <table>
                         <tr>
-                            <td>prato</td>
-                            <td>preço</td>
-                            <td>add</td>
+                            <td>Burguellet</td>
+                            <td>8€</td>
+                            <td><img src = "woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Burguellet')"></td>
                         </tr>
+                        
+                        <tr>
+                            <td>Bitoque</td>
+                            <td>10€</td>
+                            <td><img src = "woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Bitoque')"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Esparguete à Bolonhesa</td>
+                            <td>10€</td>
+                            <td><img src = "woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Esparguete à Bolonhesa')"></td>
+                        </tr>
+                                        
                     </table>
                 </div>
                 <div class="cartaTabs">
@@ -61,23 +121,22 @@
            
            
            
-<!--RIGHT (BLOCO + BOTOES)-->
+<!--RIGHT (BLOCO DE NOTAS + BOTOES)-->
             <div class="botRight">               
                 <div class="buttons" >
                     <div class="mainButtons">
-                        <button>pedidos</button>
+                        <button>Pedidos</button>
                         <button>Opiniões</button>
-                        <button>Pagamentos</button>
+                        <button>Pagamentos</button>    
                     </div>
                     <div class="supportButtons">
                         <button>Empregado</button>
-                        <button>help</button>
+                        <button>Help</button>
                     </div>
                 </div>
 
-<!--BLOCO DE NOTAS-->
-                <div class="blocoNotas">
-                    bloco de notas
+            <!--BLOCO DE NOTAS-->
+                <div id="lista de pedidos" class="blocoNotas">
                 </div>
                 
             </div>

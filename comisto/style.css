@@ -73,3 +73,7 @@ html,body{
     width: 70%;
     height: 100%;
 }
+
+head {
+    align-content: center;
+}
