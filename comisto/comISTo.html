@@ -1,42 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<!-- SRCIPT-WIZARDS TEST -->
-<script>
-    function does_a_fucking_print() {
-        console.log("Burguellets:" + sessionStorage.getItem("Burguellet") + "\n" + "Bitoque:" +
-        sessionStorage.getItem("Bitoque") + "\n" + "Esparguete à Bolonhesa:" +
-        sessionStorage.getItem("Esparguete à Bolonhesa") + "\n");
-    }
-</script>
+<!--Incluir Jquery-->
+<script type="text/javascript" src="jquery-3.2.0.min.js"></script>
 
-
-<!-- REGISTO DOS PEDIDOS -->
-<script>
-    function storeOrder(foodId) {
-        var foodCount = parseInt(sessionStorage.getItem(foodId));
-        sessionStorage.setItem(foodId, foodCount + 1);
-        updateOrderList();
-    }
-    
-</script>
-
-
-<script>
-    function updateOrderList() {
-        document.getElementById("lista de pedidos").innerHTML = "Bloco de Notas" + "<br />" +"Burguellets:" + sessionStorage.getItem("Burguellet") + "<br />" + "Bitoque:" + sessionStorage.getItem("Bitoque") + "<br />" + "Esparguete à Bolonhesa:" + sessionStorage.getItem("Esparguete à Bolonhesa") + "<br />";
-    }
-</script>
-
-
-<!-- INICIALIZAR "VETOR" DE PEDIDOS -->
-<script>    
-    function initializeDataStorage() {
-        sessionStorage.setItem("Burguellet",0);
-        sessionStorage.setItem("Bitoque",0);
-        sessionStorage.setItem("Esparguete à Bolonhesa",0);
-    }
-</script>
+<script type="text/javascript" src="functions.js"></script>
 
 
 
@@ -137,6 +105,10 @@
 
             <!--BLOCO DE NOTAS-->
                 <div id="lista de pedidos" class="blocoNotas">
+                    <table id="tabelaPedidos">
+                        <tr>
+                        </tr>  
+                    </table>
                 </div>
                 
             </div>
