@@ -72,12 +72,14 @@ html,body{
 
 .nome {
     width: 100%;
-    height: 20%;
+    height: 10%;
 }
 
 .prato {
     width: 100%;
-    height: 80%;
+    height: 90%;
+    background: url(Untitled_Artwork.png);    
+    background-size: 100% 100%;
 }
 
 .cartaTabs {
