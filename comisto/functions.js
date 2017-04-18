@@ -43,13 +43,13 @@ ordered_plates.push(espargueteBolonhesa_plate);
 
 
 
-
-
 //<!-- SRCIPT-WIZARDS TEST -->
 //<script>
     function does_a_fucking_print() {
+        var plateName;
         for (i = 0; i < ordered_plates.length; i++) {
-            console.log("Nome:" + ordered_plates[i].name + " Preco:" + ordered_plates[i].price + "\n");
+            plateName = ordered_plates[i].name;
+            console.log("Name:" + plateName + " Quantidade:" + parseInt(sessionStorage.getItem(plateName)) + "\n");
         }
     }
 
@@ -58,8 +58,7 @@ ordered_plates.push(espargueteBolonhesa_plate);
     function storeOrder(foodId) {
         var foodCount = parseInt(sessionStorage.getItem(foodId));
         sessionStorage.setItem(foodId, foodCount + 1);
-        $("#tabelaPedidos").append("<tr><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><tr>");//faz update da lista de pedidos
-        
+        $("#tabelaPedidos").append("<tr><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><img alt='" + foodId + "'src = 'woodenMinus.png', width = 20px, height = 20px onclick='removeTableEntry(this)'></td></tr>");//faz update da lista de pedidos
     } 
 
 
@@ -77,4 +76,13 @@ ordered_plates.push(espargueteBolonhesa_plate);
                 return ordered_plates[i];
             }
         }
+    }
+
+// ELIMINA UMA ROW DE UMA TABELA DADA O ID DESSA ROW
+    function removeTableEntry(tableRow) {
+        var foodId = tableRow.alt;
+        var foodCount = parseInt(sessionStorage.getItem(foodId));
+        sessionStorage.setItem(foodId, foodCount - 1);
+        document.getElementById("tabelaPedidos").deleteRow(tableRow.rowIndex);
+        does_a_fucking_print();
     }
