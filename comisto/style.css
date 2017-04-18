@@ -88,14 +88,60 @@ html,body{
 }
 
 .carta {
-    margin-top: 10%;
+    margin-top: 12%;
     margin-left: 15%;
     width: 55%;
-    height: 90%;
+    height: 88%;
+    overflow: auto;
 }
 
-p { text-align: center; }
 
 head {
     align-content: center;
+}
+
+
+
+#Burguellet {
+    display: flex;
+}
+
+#Bitoque {
+    display: flex;
+}
+
+#EspargueteBolonhesa {
+    display: flex;
+}
+
+
+
+#ingBurguellet {
+    padding-left: 10%;
+}
+
+#ingBitoque {
+    padding-left: 10%;
+}
+
+#ingEsparguete {
+    padding-left: 10%;
+}
+
+
+
+
+#prato {
+   width: 70%;
+   padding-bottom: 4%;
+}
+
+#preco {
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 4%;
+}
+
+#botao {
+    padding-bottom: 4%;
 }
