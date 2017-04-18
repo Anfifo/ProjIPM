@@ -11,6 +11,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+        $('#Pagamentos').hide();
+        $('#Opinioes').hide();
+   
+//toggles visibility        
+        $('#testButt').click(function() {
+            $('#Pedidos').toggle(); 
+        });
+    });
+    
+</script>
 
 
 
@@ -32,6 +45,7 @@
 <!--TOP-->
     <div id="top" class="top"> 
         Faixa top
+        <button id="testButt"> PRESS THIS FOR RANDOMNESS</button>
     </div>
     
     
@@ -39,65 +53,56 @@
             
             
 <!-- LEFT (CARTA) -->
-            <div class="botLeft">
-                <div class="carta">
-                    <p align="center" style="font-size:190%">Com.ISTo</p>
-                    <p align="center">(Toque no nome para mais info)</p>
+        <div class="botLeft">
+            <div class="carta">
+                <p align="center" style="font-size:190%">Com.ISTo</p>
+                <p align="center">(Toque no nome para mais info)</p>
 
-                    <div id="tabelaCarta">
+                <div id="tabelaCarta">
 
-                        <div id="Burguellet">
-                            
-                            <div id="prato"> <a data-toggle="collapse" href="#ingBurguellet">Burguellet</span> </a></div>
-                            <div id="preco">8€</div>
-                            <div id="botao"> <img src = "woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Burguellet')"></div>                     
-                            
-                        </div>
-                        
-                        <div id="ingBurguellet" class="collapse">
-                            <p>Ingredientes:</p>
-                            <p style="padding-left: 10%">Carne</p>
-                            <p style="padding-left: 10%">Ovo</p>
-                            <p style="padding-left: 10%"> Pao</p>
-                        </div>
-                        
-                        <div id="Bitoque">
-                        
-                            <div id="prato"><a data-toggle="collapse" href="#ingBitoque">Bitoque</span> </a></div>
+                    <div id="Burguellet">
+                        <div id="prato"> <a data-toggle="collapse" href="#ingBurguellet">Burguellet</span> </a></div>
+                        <div id="preco">8€</div>
+                        <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Burguellet')"></div>                     
+                    </div>
+
+                    <div id="ingBurguellet" class="collapse">
+                        <p>Ingredientes:</p>
+                        <p style="padding-left: 10%">Carne</p>
+                        <p style="padding-left: 10%">Ovo</p>
+                        <p style="padding-left: 10%"> Pao</p>
+                    </div>
+
+                    <div id="Bitoque">
+                        <div id="prato"><a data-toggle="collapse" href="#ingBitoque">Bitoque</span> </a></div>
+                        <div id="preco">10€</div>
+                        <div id="botao"><img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Bitoque')"></div>
+                    </div>
+
+                    <div id="ingBitoque" class="collapse">
+                        <p>Ingredientes:</p>
+                        <p style="padding-left: 10%">Alface</p>
+                        <p style="padding-left: 10%">Ovo</p>
+                        <p style="padding-left: 10%">Tomate</p>
+                    </div>
+
+                    <div id="EspargueteBolonhesa">
+                            <div id="prato"><a data-toggle="collapse" href="#ingEsparguete">Esparguete a Bolonhesa</span> </a></div>
                             <div id="preco">10€</div>
-                            <div id="botao"><img src = "woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Bitoque')"></div>
-                        
-                        </div>
-
-                        <div id="ingBitoque" class="collapse">
-                            <p>Ingredientes:</p>
-                            <p style="padding-left: 10%">Alface</p>
-                            <p style="padding-left: 10%">Ovo</p>
-                            <p style="padding-left: 10%">Tomate</p>
-                        </div>
-                        
-                        <div id="EspargueteBolonhesa">
-                        
-                                <div id="prato"><a data-toggle="collapse" href="#ingEsparguete">Esparguete a Bolonhesa</span> </a></div>
-                                <div id="preco">10€</div>
-                                <div id="botao"><img src = "woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Esparguete à Bolonhesa')"></div>
-                        
-                        </div>
-
-                         <div id="ingEsparguete" class="collapse">
-                            <p>Ingredientes:</p>
-                            <p style="padding-left: 10%">Carne</p>
-                            <p style="padding-left: 10%">Esparguete</p>
-                            <p style="padding-left: 10%">Tomatada</p>
-                        </div>
-                        
-                                        
+                            <div id="botao"><img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Esparguete à Bolonhesa')"></div>
+                    </div>
+                    
+                    <div id="ingEsparguete" class="collapse">
+                        <p>Ingredientes:</p>
+                        <p style="padding-left: 10%">Carne</p>
+                        <p style="padding-left: 10%">Esparguete</p>
+                        <p style="padding-left: 10%">Tomatada</p>
                     </div>
                 </div>
                 <div class="cartaTabs">
                 </div>
             </div>
-    
+        </div>
            
                
                    
@@ -135,11 +140,19 @@
                 </div>
 
             <!--BLOCO DE NOTAS-->
-                <div id="lista de pedidos" class="blocoNotas">
+                <div id="Pedidos" class="blocoNotas">
                     <table id="tabelaPedidos">
                         <tr>
                         </tr>  
                     </table>
+                </div>
+                
+                <div id ="Opinioes" class="blocoNotas">
+                    
+                </div>
+                
+                <div id="Pagamentos" class = "blocoNotas">
+                    
                 </div>
                 
             </div>
