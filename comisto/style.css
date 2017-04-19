@@ -62,8 +62,10 @@ html,body{
 }
 
 .blocoNotas {
-    height: 80%;
+    height: 75%;
     width: auto;
+    margin-right: 5%;
+    margin-bottom: 5%;
     
     overflow: auto;
 
