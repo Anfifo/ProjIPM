@@ -104,6 +104,9 @@ head {
     padding-bottom: 5%;
 }
 
+#Bebidas {
+    padding-bottom: 5%;    
+}
 
 
 #Burguellet {
@@ -121,6 +124,15 @@ head {
     padding-left: 10%;
 }
 
+#Agua {
+    display: flex;
+    padding-left: 10%;
+}
+
+#Cola {
+    display: flex;
+    padding-left: 10%;
+}
 
 
 #ingBurguellet {
