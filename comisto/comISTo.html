@@ -157,10 +157,21 @@
                         <col style="width:77%"><col style="width:15%"><col style="width:10%">
                             
                         </table>
+                    
+                    <div id="orderConfirmedDiv" class="alert alert-success" role="alert">
+                        <strong>Successo!</strong> O seu pedido foi enviado para a Cozinha e está a ser preparado.
                     </div>
-                    <div class = "buttonsBlocoNotas">
+                    
+                    </div>
+                    <div id="orderDiv" class = "buttonsBlocoNotas">
                         
-                        <button id="pedirButton" onclick="transferOrder()">Pedir</button>
+                        <button type = "button" id="pedirButton">Pedir</button>
+                            
+                    </div>
+                    <div id="confirmOrderDiv" class ="buttonsBlocoNotas">
+                            <p>Deseja enviar o seu pedido para a cozinha?</p>
+                            <button type = "button" id="confirmOrder" class="confirmButton">Confirmar</button>
+                            <button type = "button" id="cancelOrder" class="cancelButton" >Cancelar</button>
                     </div>
                 </div>
                 

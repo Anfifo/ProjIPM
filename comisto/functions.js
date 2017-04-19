@@ -2,8 +2,11 @@
 $(document).ready(function() {
     $('#Pagamentos').hide();
     $('#Opinioes').hide();
-
-    //associa ao click do botao de #ID a função:
+    $('#confirmOrderDiv').hide();
+    $("#orderConfirmedDiv").hide();
+    
+    
+    //associa ao click do botao de #ID a funcao:
     $('#pedidosButton').click(function() {
         selectPedidos(); 
     });
@@ -15,8 +18,33 @@ $(document).ready(function() {
     $('#opinioesButton').click(function(){
         selectOpinioes();
     });
-});
     
+    
+    
+    
+    $('#pedirButton').click(function(){
+        replaceDivs('#confirmOrderDiv', '#orderDiv');
+    });
+    
+    $('#cancelOrder').click(function(){
+        replaceDivs('#orderDiv','#confirmOrderDiv');
+    });
+    
+    $('#confirmOrder').click(function(){
+        transferOrder();
+        $("#orderConfirmedDiv").show().delay(5000).fadeOut();
+        replaceDivs('#orderDiv','#confirmOrderDiv');
+    });
+    
+});
+
+
+
+// shows new Div while hiding oldDiv
+function replaceDivs(newDiv, oldDiv){
+    $(oldDiv).hide();
+    $(newDiv).show();    
+}
 
 
 
@@ -208,11 +236,9 @@ function selectOpinioes(){
 
 
 
+
 // Bloco de Notas auxiliar functions
 
-function confirmOrder(){
-    
-}
 
 function selectSplitTotal(){
     
