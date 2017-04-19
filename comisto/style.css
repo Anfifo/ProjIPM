@@ -69,10 +69,9 @@ html,body{
     
     overflow: auto;
 
-    background-image: url("images/notepadedit.png");
-    background-size: 150% 114%;
+    background-image: url("images/blankNotas.png");
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position:center center;
 }
 
 
@@ -89,6 +88,7 @@ html,body{
 
 
 h2 {
+    padding-top: 5%;
     text-align: center;
 }
 
