@@ -4,8 +4,16 @@ $(document).ready(function() {
     $('#Opinioes').hide();
 
     //associa ao click do botao de #ID a função:
-    $('#testButt').click(function() {
+    $('#pedidosButton').click(function() {
         selectPedidos(); 
+    });
+    
+    $('#pagamentosButton').click(function() {
+        selectPagamentos(); 
+    });
+    
+    $('#opinioesButton').click(function(){
+        selectOpinioes();
     });
 });
     
@@ -77,7 +85,7 @@ ordered_plates.push(espargueteBolonhesa_plate);
     function storeOrder(foodId) {
         var foodCount = parseInt(sessionStorage.getItem(foodId));
         sessionStorage.setItem(foodId, foodCount + 1);
-        $("#tabelaPedidos").append("<tr><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><img alt='" + foodId + "'src = 'woodenMinus.png', width = 20px, height = 20px onclick='removeTableEntry(this)'></td></tr>");//faz update da lista de pedidos
+        $("#tabelaPedidos").append("<tr><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><img alt='" + foodId + "'src = 'images/woodenMinus.png', width = 20px, height = 20px onclick='removeTableEntry(this)'></td></tr>");//faz update da lista de pedidos
     } 
 
 
