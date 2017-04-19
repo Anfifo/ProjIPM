@@ -1,3 +1,22 @@
+//As funcoes dentro do document correm ao inicio
+$(document).ready(function() {
+    $('#Pagamentos').hide();
+    $('#Opinioes').hide();
+
+    //associa ao click do botao de #ID a função:
+    $('#testButt').click(function() {
+        selectPedidos(); 
+    });
+});
+    
+
+
+
+
+
+
+
+
 //PLATE STRUCTURE
     function Plate(price, ingredients, name){
         this.price = price;
@@ -86,3 +105,71 @@ ordered_plates.push(espargueteBolonhesa_plate);
         document.getElementById("tabelaPedidos").deleteRow(tableRow.rowIndex);
         does_a_fucking_print();
     }
+
+
+
+
+
+
+
+
+
+
+var currentSelected = '#Pedidos';
+
+
+//Buttons related
+
+function callWaiter(){
+}
+
+function helpRequest(){
+
+}
+
+function selectBlocoNotas(temp){
+    if (temp == currentSelected){
+        currentSelected = null;
+        $(temp).hide();
+        return;
+    }
+    
+    else{
+        $(currentSelected).hide(); 
+        currentSelected = temp;
+        $(temp).show();
+    }    
+}
+
+function selectPedidos(){
+    selectBlocoNotas('#Pedidos');
+}
+
+function selectPagamentos(){
+    selectBlocoNotas('#Pagamentos');
+}
+
+function selectOpinioes(){
+    selectBlocoNotas('#Opinioes');
+}
+
+
+
+
+// Bloco de Notas auxiliar functions
+
+function confirmOrder(){
+    
+}
+
+function selectSplitTotal(){
+    
+}
+
+function selectSplitPerPerson(){
+    
+}
+
+function selecVer(){
+    
+}
