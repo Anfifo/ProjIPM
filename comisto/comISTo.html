@@ -23,6 +23,18 @@
         });
     });
     
+    function togglePagamentos(){
+        
+    }
+    
+    function toggleOpinioes(){
+        
+    }
+    
+    function togglePedidos(){
+        
+    }
+    
 </script>
 
 
@@ -61,7 +73,7 @@
                 <div id="tabelaCarta">
 
                     <div id="Burguellet">
-                        <div id="prato"> <a data-toggle="collapse" href="#ingBurguellet">Burguellet</span> </a></div>
+                        <div id="prato"> <a data-toggle="collapse" href="#ingBurguellet">Burguellet </a></div>
                         <div id="preco">8€</div>
                         <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Burguellet')"></div>                     
                     </div>
@@ -74,7 +86,7 @@
                     </div>
 
                     <div id="Bitoque">
-                        <div id="prato"><a data-toggle="collapse" href="#ingBitoque">Bitoque</span> </a></div>
+                        <div id="prato"><a data-toggle="collapse" href="#ingBitoque">Bitoque </a></div>
                         <div id="preco">10€</div>
                         <div id="botao"><img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Bitoque')"></div>
                     </div>
@@ -87,7 +99,7 @@
                     </div>
 
                     <div id="EspargueteBolonhesa">
-                            <div id="prato"><a data-toggle="collapse" href="#ingEsparguete">Esparguete a Bolonhesa</span> </a></div>
+                            <div id="prato"><a data-toggle="collapse" href="#ingEsparguete">Esparguete a Bolonhesa </a></div>
                             <div id="preco">10€</div>
                             <div id="botao"><img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Esparguete à Bolonhesa')"></div>
                     </div>
@@ -126,7 +138,8 @@
            
            
 <!--RIGHT (BLOCO DE NOTAS + BOTOES)-->
-            <div class="botRight">               
+            <div class="botRight">
+               
                 <div class="buttons" >
                     <div class="mainButtons">
                         <button>Pedidos</button>
@@ -139,20 +152,48 @@
                     </div>
                 </div>
 
-            <!--BLOCO DE NOTAS-->
+<!--BLOCO DE NOTAS-->
+<!--PEDIDOS-->
                 <div id="Pedidos" class="blocoNotas">
-                    <table id="tabelaPedidos">
-                        <tr>
-                        </tr>  
-                    </table>
+                    <h2>Pedidos</h2>
+                    <div class = "centerBlocoNotas">
+                        <table id="tabelaPedidos">
+                            <tr>
+                            </tr>  
+                        </table>
+                    </div>
+                    <div class = "buttonsBlocoNotas">
+                        Botoes
+                        <button id="pedirButton">Pedir</button>
+                    </div>
                 </div>
                 
+<!--OPINIOES-->
                 <div id ="Opinioes" class="blocoNotas">
+                    <h2>Opiniões</h2>
                     
+                    <div class="centerBlocoNotas">
+                        
+                    </div>
+                    
+                    <div class ="buttonsBlocoNotas">
+                        Botoes
+                    </div>
                 </div>
-                
+
+<!--PAGAMENTOS-->
                 <div id="Pagamentos" class = "blocoNotas">
+                    <h2>Pagamentos</h2>
                     
+                    <div class="centerBlocoNotas">
+                        
+                    </div>
+                    
+                    <div class="buttonsBlocoNotas">
+                        Butoes
+                        <button>Pagar com Multibanco</button>
+                        <button>Pagar com Dinheiro</button>
+                    </div>
                 </div>
                 
             </div>
