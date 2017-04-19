@@ -30,7 +30,7 @@
 <!--TOP-->
     <div id="top" class="top"> 
         Faixa top
-        <button id="testButt"> PRESS THIS FOR RANDOMNESS</button>
+        <button id="testButt"> PRESS THIS FOR RANDOMNESS</button> <!-- me no gusta -->
     </div>
     
     
@@ -97,13 +97,13 @@
                                 <div id="Agua">
                                     <div id="prato">Água</div>
                                     <div id="preco">0,75€</div>
-                                    <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Burguellet')"></div>                     
+                                    <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Água')"></div>                     
                                 </div>
 
                                 <div id="Cola">
-                                    <div id="prato">Cola</div>
+                                    <div id="prato">Coca-Cola</div>
                                     <div id="preco">1€</div>
-                                    <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Burguellet')"></div>                     
+                                    <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Cola')"></div>                     
                                 </div>
 
                         </div>
@@ -147,26 +147,26 @@
                     </div>
                 </div>
 
-<!--BLOCO DE NOTAS-->
-<!--PEDIDOS-->
+        <!--BLOCO DE NOTAS-->
+            <!--PEDIDOS-->
                 <div id="Pedidos" class="blocoNotas">
-                    <h2>Pedidos</h2>
+                    <h2 onclick="selectPedidos()">Pedidos</h2>
                     <div class = "centerBlocoNotas">
                         <table id="tabelaPedidos">
+                        
                         <col style="width:77%"><col style="width:15%"><col style="width:10%">
-                            <tr>
-                            </tr>  
+                            
                         </table>
                     </div>
                     <div class = "buttonsBlocoNotas">
                         
-                        <button id="pedirButton">Pedir</button>
+                        <button id="pedirButton" onclick="transferOrder()">Pedir</button>
                     </div>
                 </div>
                 
-<!--PAGAMENTOS-->
+        <!--PAGAMENTOS-->
                 <div id="Pagamentos" class = "blocoNotas">
-                    <h2>Pagamentos</h2>
+                    <h2 onclick="selectPagamentos()">Pagamentos</h2>
                     
                     <div class="centerBlocoNotas">
                         <div display="flex">
@@ -174,33 +174,39 @@
                             <span id="tabContaDividida">Conta Dividida</span>
                         </div>
                         
-                        <!--INSERIR CONTA AQUI-->
+                        
+                        <!--MIGUEL QUE FEZ--ATENCAO!!!!!!!!!!!-->
+                        <div>
+                            <table id="tabelaConta">
+                               
+                            </table>
+                        </div>
+                        <!-- FIM DO K O MIGUEL FEZ!!!!!!!!!!!! ELE FEZ 1 DIV!!!!!!!!!!!! PARA A TABELA DA CONTA!!!!!!!!!!!-->
+                    
+                    
+                    
                     </div>
                     
                     <div class="buttonsBlocoNotas">
-                        <button>Pagar com Multibanco</button>
-                        <button>Pagar com Dinheiro</button>
+                        <button onclick="does_a_fucking_print()">Pagar com Multibanco</button>
+                        <button onclick="does_a_fucking_print()">Pagar com Dinheiro</button>
                     </div>
                 </div>
 
                <!--OPINIOES-->
                 <div id ="Opinioes" class="blocoNotas">
-                    <h2>Opiniões</h2>
+                    <h2 onclick="selectOpinioes()">Opiniões</h2>
                     
                     <div class="centerBlocoNotas">
                         <div display="flex">
-                                <span id="tabEscreverOpinioes">Escrever</span>
-                                <span id="tabLerOpinioes">Ler</span>
-                            </div>
-                        
+                            <span id="tabEscreverOpinioes">Escrever</span>
+                            <span id="tabLerOpinioes">Ler</span>
+                        </div>
                     </div>
-                    
                     <div class ="buttonsBlocoNotas">
                         
                     </div>
-                </div>
-                
-                
+                </div>        
             </div>
     </div>    
 </body>
