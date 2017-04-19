@@ -26,7 +26,6 @@ html,body{
     height: 80vh;
     width: 100vw;
     display:flex;
- 
 }
 
 
@@ -37,9 +36,13 @@ html,body{
     font-family: gizFont;
     color: white;
 
-    background: url(images/Ardosia.png);
-    background-size: cover;   
+    background: url(images/Ardosia.png) no-repeat;
+    
+    background-size: 100% 100%;
 }
+
+
+
 
 .botMiddle {
     width: 44%;
@@ -92,7 +95,7 @@ html,body{
     margin-left: 15%;
     width: 55%;
     height: 88%;
-    overflow: auto;
+    overflow: hidden;
 }
 
 
