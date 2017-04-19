@@ -23,7 +23,9 @@ $(document).ready(function() {
 
 
 
-
+// VARIAVEIS GLOBAIS
+var OrderCounter = 0; //nao mexer nisto, este contador so tem UM proposito
+var totalPrice = 0;
 
 //PLATE STRUCTURE
     function Plate(price, ingredients, name){
@@ -44,12 +46,21 @@ var bitoque_plate = new Plate(10, bitoque_ingredients, "Bitoque");
 var espargueteBolonhesa_ingredients = ["Mozzarella Ralada","Fiambre","Tomate","Alface"];
 var espargueteBolonhesa_plate = new Plate(10, espargueteBolonhesa_ingredients, "Esparguete à Bolonhesa");
 
+        /* Água */
+var agua_ingredients = [];
+var agua_plate = new Plate(0.75, agua_ingredients, "Água");
+
+        /* Coca-cola */
+var cola_ingredients = ["Cafeína", "Açúcar", "Limão", "Gelo"];
+var cola_plate = new Plate(1, cola_ingredients, "Cola");
 
 // VETOR DE PRATOS TODOS DO RESTAURANTE
 var ordered_plates = [];
 ordered_plates.push(burguellet_plate);
 ordered_plates.push(bitoque_plate);
 ordered_plates.push(espargueteBolonhesa_plate);
+ordered_plates.push(agua_plate);
+ordered_plates.push(cola_plate);
 
 
 
@@ -68,28 +79,33 @@ ordered_plates.push(espargueteBolonhesa_plate);
 
 
 
+//    SRCIPT-WIZARDS TEST 
 
-
-//<!-- SRCIPT-WIZARDS TEST -->
-//<script>
     function does_a_fucking_print() {
-        var plateName;
-        for (i = 0; i < ordered_plates.length; i++) {
-            plateName = ordered_plates[i].name;
-            console.log("Name:" + plateName + " Quantidade:" + parseInt(sessionStorage.getItem(plateName)) + "\n");
-        }
+        //console.log("I got printed");
+        
+        console.log(totalPrice);
+        
+        
+        //var plateName, platePrice;
+        //for (i = 0; i < ordered_plates.length; i++) {
+        //    plateName = ordered_plates[i].name;
+        //    platePrice = ordered_plates[i].price;
+        //    console.log("Name:" + plateName + " Quantity:" + parseInt(sessionStorage.getItem(plateName)) + " Price:" + platePrice + "\n");
+        //}
     }
 
 
-//<!-- REGISTO DOS PEDIDOS -->
+//     REGISTO DOS PEDIDOS
     function storeOrder(foodId) {
         var foodCount = parseInt(sessionStorage.getItem(foodId));
         sessionStorage.setItem(foodId, foodCount + 1);
-        $("#tabelaPedidos").append("<tr><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><img alt='" + foodId + "'src = 'images/woodenMinus.png', width = 20px, height = 20px onclick='removeTableEntry(this)'></td></tr>");//faz update da lista de pedidos
+        $("#tabelaPedidos").append("<tr id='Pedido" + OrderCounter + "'><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><img alt='Pedido" + OrderCounter + "', src='images/woodenMinus.png', width = 20px, height = 20px onclick='removeTableEntry(alt)'></td></tr>");//faz update da lista de pedidos
+        OrderCounter++;
     } 
 
 
-//<!-- INICIALIZAR "VETOR" DE PEDIDOS -->
+//     INICIALIZAR "VETOR" DE PEDIDOS
     function initializeDataStorage() {
         for(i = 0; i < ordered_plates.length; i++) {
             sessionStorage.setItem(ordered_plates[i].name, 0);
@@ -105,13 +121,41 @@ ordered_plates.push(espargueteBolonhesa_plate);
         }
     }
 
-// ELIMINA UMA ROW DE UMA TABELA DADA O ID DESSA ROW
-    function removeTableEntry(tableRow) {
-        var foodId = tableRow.alt;
+// ELIMINA UMA ROW DA TABELA DE PEDIDOS DADO O SEU ID
+    function removeTableEntry(tableRowID) {
+        var tr = document.getElementById(tableRowID);
+        var foodId = tr.cells[0].innerHTML;
         var foodCount = parseInt(sessionStorage.getItem(foodId));
         sessionStorage.setItem(foodId, foodCount - 1);
-        document.getElementById("tabelaPedidos").deleteRow(tableRow.rowIndex);
-        does_a_fucking_print();
+        document.getElementById("tabelaPedidos").deleteRow(tr.rowIndex);
+    }
+
+// EFETUA O PEDIDO (rolepay :P) E METE NA CONTA PARA PAGAR
+    function transferOrder() {
+        var plateName, platePrice, numberOfEachPlate;
+        var totalNumberOfPlates = $('#tabelaPedidos tr').length;
+        
+
+        //cria a tabela da conta e guarda nela os pedidos efetuados
+        for (i = 0; i < ordered_plates.length; i++) {
+            plateName = ordered_plates[i].name;
+            platePrice = ordered_plates[i].price;
+            numberOfEachPlate = parseInt(sessionStorage.getItem(plateName));
+           
+            while(numberOfEachPlate > 0) {
+                $("#tabelaConta").append("<tr><td>LARANJA</td><td>TOZÉ</td><td>" + plateName + "</td><td>" + platePrice + "€</td></tr>");
+                numberOfEachPlate--;
+                totalPrice += platePrice;   
+            }
+          
+            sessionStorage.setItem(plateName, 0); //elimina todos os pedidos no menu dos pedidos (internamente)
+        }
+        
+        //remove a tabela dos pedidos
+        while(totalNumberOfPlates > 0) {
+            document.getElementById("tabelaPedidos").deleteRow(totalNumberOfPlates - 1);
+            totalNumberOfPlates--;
+        }
     }
 
 
