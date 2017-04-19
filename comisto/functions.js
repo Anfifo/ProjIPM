@@ -145,7 +145,7 @@ function selectBlocoNotas(temp){
     else{
         $(currentSelected).hide(); 
         currentSelected = temp;
-        $(temp).show();
+        $(temp).show(); 
     }    
 }
 
