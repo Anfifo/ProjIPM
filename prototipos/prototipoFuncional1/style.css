@@ -1,0 +1,186 @@
+@font-face {
+    font-family: gizFont;
+    src: url(DK_Crayon_Crumble.ttf);
+}
+
+
+html,body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    background: url(images/wooden-planks-texture.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.top {
+    height: 20vh;
+    width: 100vw;
+    
+}
+
+.bottom {
+    height: 80vh;
+    width: 100vw;
+    display:flex;
+}
+
+
+.botLeft {
+    width: 28%;
+    height: 100%;
+    display: flex;
+    font-family: gizFont;
+    color: white;
+
+    background: url(images/Ardosia.png) no-repeat;
+    
+    background-size: 100% 100%;
+}
+
+
+
+
+.botMiddle {
+    width: 44%;
+    height: 100%;
+
+}
+
+.botRight {
+    width: 28%;
+    height: 100%;
+}
+
+.buttons {
+    height: 20%;
+    width: 100%;
+    display: flex;
+}
+
+.blocoNotas {
+    height: 75%;
+    width: auto;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    
+    overflow: auto;
+
+    background-image: url("images/blankNotas.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.centerBlocoNotas {
+    padding-left: 20%;
+    padding-top: 5%;
+}
+
+.buttonsBlocoNotas {
+    position: absolute;
+    right: 3%;
+    bottom: 5%;
+}
+
+
+h2 {
+    padding-top: 5%;
+    text-align: center;
+}
+
+.nome {
+    width: 100%;
+    height: 10%;
+}
+
+.prato {
+    width: 100%;
+    height: 90%;
+    background: url(images/plate.png);    
+    background-size: 100% 100%;
+}
+
+
+.carta {
+    margin-top: 12%;
+    margin-left: 15%;
+    width: 55%;
+    height: 88%;
+    overflow: hidden;
+}
+
+
+head {
+    align-content: center;
+}
+
+
+#Pratos_Principais {
+    padding-bottom: 5%;
+}
+
+#Bebidas {
+    padding-bottom: 5%;    
+}
+
+
+#Burguellet {
+    display: flex;
+    padding-left: 10%;
+}
+
+#Bitoque {
+    display: flex;
+    padding-left: 10%;
+}
+
+#EspargueteBolonhesa {
+    display: flex;
+    padding-left: 10%;
+}
+
+#Agua {
+    display: flex;
+    padding-left: 10%;
+}
+
+#Cola {
+    display: flex;
+    padding-left: 10%;
+}
+
+
+#ingBurguellet {
+    padding-left: 20%;
+}
+
+#ingBitoque {
+    padding-left: 20%;
+}
+
+#ingEsparguete {
+    padding-left: 20%;
+}
+
+
+
+
+#prato {
+   width: 65%;
+   padding-bottom: 4%;
+}
+
+#preco {
+    width: 15%;
+    padding-left: 10%;
+    padding-bottom: 4%;
+}
+
+#botao {
+    padding-left: 10%;
+    padding-bottom: 4%;
+}

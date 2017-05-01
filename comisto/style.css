@@ -76,8 +76,8 @@ html,body{
 
 
 .centerBlocoNotas {
-    padding-left: 20%;
-    padding-top: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 
 .buttonsBlocoNotas {
@@ -183,4 +183,35 @@ head {
 #botao {
     padding-left: 10%;
     padding-bottom: 4%;
+}
+
+
+
+
+
+.contaUserBox {
+    display: table;
+    vertical-align: middle;
+}
+
+.pedidosDoUser {
+    width 70%;
+    display: table-cell;
+}
+
+
+
+td.tableSelectButton{
+    font-size: 120%;
+    padding: 1%;
+    width: 40%;
+    margin-bottom: 5%;
+} 
+
+#tabContaPersonalizada {
+    border-right: 1px solid black;
+}
+
+#tabContaDividida {
+    border-bottom: 1px solid black;
 }

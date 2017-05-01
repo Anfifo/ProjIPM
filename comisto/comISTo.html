@@ -157,7 +157,7 @@
                             
                         </table>
                     
-                    <div id="orderConfirmedDiv" class="alert alert-success" role="alert">
+                    <div id="orderConfirmedDiv" class="alert" role="alert">
                         <strong>Successo!</strong> O seu pedido foi enviado para a Cozinha e está a ser preparado.
                     </div>
                     
@@ -179,21 +179,29 @@
                     <h2 onclick="selectPagamentos()">Pagamentos</h2>
                     
                     <div class="centerBlocoNotas">
-                        <div display="flex">
-                            <span id="tabContaPersonalizada">Conta Personalizada</span>
-                            <span id="tabContaDividida">Conta Dividida</span>
-                        </div>
-                        
-                        
-                        <!--MIGUEL QUE FEZ--ATENCAO!!!!!!!!!!!-->
                         <div>
-                            <table id="tabelaConta">
-                               
-                            </table>
+                           <table class="tabSelectButton">
+                               <tr>
+                                   <td id="tabContaPersonalizada" class="tableSelectButton">Conta Personalizada</td>
+                                   <td id="tabContaDividida" class="tableSelectButton">Conta Dividida</td>
+                               </tr>
+                           </table>                            
                         </div>
-                        <!-- FIM DO K O MIGUEL FEZ!!!!!!!!!!!! ELE FEZ 1 DIV!!!!!!!!!!!! PARA A TABELA DA CONTA!!!!!!!!!!!-->
-                    
-                    
+                        
+                        
+                        <div id="divContaPersonalizada">
+                            <div class="contaUserBox">
+                                <div id="contaUserName" class="contaUserName">João</div>
+                                <div class="pedidosDoUser">
+                                    <table id="tabelaConta">
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="divContaDividida">
+                            To do yet asd
+                        </div>
                     </div>
                     
                     <div class="buttonsBlocoNotas">
@@ -207,9 +215,13 @@
                     <h2 onclick="selectOpinioes()">Opiniões</h2>
                     
                     <div class="centerBlocoNotas">
-                        <div display="flex">
-                            <span id="tabEscreverOpinioes">Escrever</span>
-                            <span id="tabLerOpinioes">Ler</span>
+                        <div>
+                            <table class="tabSelectButton">
+                               <tr>
+                                   <td id="tabEscreverOpinioes" class="tableSelectButton">Escrever</td>
+                                   <td id="tabLerOpinioes" class="tableSelectButton">Ler</td>
+                               </tr>
+                           </table>
                         </div>
                     </div>
                     <div class ="buttonsBlocoNotas">
