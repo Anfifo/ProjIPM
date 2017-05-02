@@ -35,6 +35,7 @@ html,body{
     display: flex;
     font-family: gizFont;
     color: white;
+    font-size: large;
 
     background: url(images/Ardosia.png) no-repeat;
     
@@ -108,11 +109,48 @@ h2 {
 .carta {
     margin-top: 12%;
     margin-left: 15%;
-    width: 55%;
-    height: 88%;
-    overflow: hidden;
+
+    width: 70%;
+    height: 80%;
+
 }
 
+.titulo {
+    font-size: 230%;
+}
+
+.info {
+    font-size: 80%;
+    margin-bottom: 8%;
+}
+
+#plus {
+    color: white;
+}
+
+#tabelaCarta {
+    padding-right: 10%;
+    overflow: auto;
+    height: 80%;
+}
+
+.menu_entry {
+    font-size: 100%;
+}
+
+.collapse .in .collapsing {
+    font-size: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 10px 6px 6px rgba(255,255,255,0.5); 
+}
 
 head {
     align-content: center;
@@ -121,10 +159,12 @@ head {
 
 #Pratos_Principais {
     padding-bottom: 5%;
+    font-size: 130%;
 }
 
 #Bebidas {
-    padding-bottom: 5%;    
+    padding-bottom: 5%;   
+    font-size: 120%; 
 }
 
 
@@ -217,7 +257,7 @@ td.tableSelectButton{
 }
 
 #empregadoButton {
-    width: 10%;
+    width: 5%;
 }
 
 #pagamentosButton {
@@ -235,7 +275,6 @@ td.tableSelectButton{
 
 #helpButton {
     width: 5%;
-    height: 0%;
 }
 
 .supportButtons {
