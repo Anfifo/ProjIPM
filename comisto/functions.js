@@ -98,7 +98,7 @@ var espargueteBolonhesa_plate = new Plate(10, espargueteBolonhesa_ingredients, "
 
         /* Água */
 var agua_ingredients = [];
-var agua_plate = new Plate(0.75, agua_ingredients, "Água");
+var agua_plate = new Plate(1, agua_ingredients, "Água");
 
         /* Coca-cola */
 var cola_ingredients = ["Cafeína", "Açúcar", "Limão", "Gelo"];
