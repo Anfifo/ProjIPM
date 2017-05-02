@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="bs.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
 
 
@@ -30,6 +31,7 @@
 <!--TOP-->
     <div id="top" class="top"> 
 <!--        <button id="testButt"> PRESS THIS FOR RANDOMNESS</button>  me no gusta -->
+   
     </div>
     
     
@@ -39,51 +41,51 @@
 <!-- LEFT (CARTA) -->
         <div class="botLeft">
             <div class="carta">
-                <p align="center" style="font-size:190%">Com.ISTo</p>
-                <p align="center">(Toque no nome para mais info)</p>
+                <div align="center" class = "titulo">Menu</div>
+                <div align="center" class="info">(Toque no nome para mais info)</div>
 
                 <div id="tabelaCarta">
                     <div id="Pratos_Principais"> <a data-toggle="collapse" href="#intComidas">Pratos Principais </a></div>
 
                         <div id="intComidas" class="collapse">
                             
-                            <div id="Burguellet">
-                                <div id="prato"> <a data-toggle="collapse" href="#ingBurguellet">Burguellet </a></div>
+                            <div id="Burguellet" class="menu_entry">
+                                <div id="prato"> <a data-toggle="collapse" href="#ingBurguellet">- Burguellet </a></div>
                                 <div id="preco">8€</div>
-                                <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Burguellet')"></div>                     
+                                <div id="botao"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Burguellet')"></i> </div>                      
                             </div>
 
                             <div id="ingBurguellet" class="collapse">
                                 <p>Ingredientes:</p>
-                                <p style="padding-left: 10%">Carne</p>
-                                <p style="padding-left: 10%">Ovo</p>
-                                <p style="padding-left: 10%"> Pao</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Carne</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Ovo</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Pao</p>
                             </div>
 
-                            <div id="Bitoque">
-                                <div id="prato"><a data-toggle="collapse" href="#ingBitoque">Bitoque </a></div>
+                            <div id="Bitoque" class="menu_entry">
+                                <div id="prato"><a data-toggle="collapse" href="#ingBitoque">- Bitoque </a></div>
                                 <div id="preco">10€</div>
-                                <div id="botao"><img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Bitoque')"></div>
+                                <div id="botao"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Bitoque')"></i></div>
                             </div>
 
                             <div id="ingBitoque" class="collapse">
                                 <p>Ingredientes:</p>
-                                <p style="padding-left: 10%">Alface</p>
-                                <p style="padding-left: 10%">Ovo</p>
-                                <p style="padding-left: 10%">Tomate</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Alface</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Ovo</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Tomate</p>
                             </div>
 
-                            <div id="EspargueteBolonhesa">
-                                    <div id="prato"><a data-toggle="collapse" href="#ingEsparguete">Esparguete a Bolonhesa </a></div>
+                            <div id="EspargueteBolonhesa" class="menu_entry">
+                                    <div id="prato"><a data-toggle="collapse" href="#ingEsparguete">- Esparguete Bolonhesa </a></div>
                                     <div id="preco">10€</div>
-                                    <div id="botao"><img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Esparguete à Bolonhesa')"></div>
+                                    <div id="botao"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Esparguete à Bolonhesa')"></i></div>
                             </div>
                             
                             <div id="ingEsparguete" class="collapse">
                                 <p>Ingredientes:</p>
-                                <p style="padding-left: 10%">Carne</p>
-                                <p style="padding-left: 10%">Esparguete</p>
-                                <p style="padding-left: 10%">Tomatada</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Carne</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Esparguete</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true"></i> Tomatada</p>
                             </div>
 
                             
@@ -94,15 +96,15 @@
                             <div id="intBebidas" class="collapse">
                                 
                                 <div id="Agua">
-                                    <div id="prato">Água</div>
-                                    <div id="preco">0,75€</div>
-                                    <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Água')"></div>                     
+                                    <div id="prato">- Água</div>
+                                    <div id="preco">1€</div>
+                                    <div id="botao"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Água')"></i></div>                     
                                 </div>
 
                                 <div id="Cola">
-                                    <div id="prato">Coca-Cola</div>
+                                    <div id="prato">- Coca-Cola</div>
                                     <div id="preco">1€</div>
-                                    <div id="botao"> <img src = "images/woodenPlus.png", width = 20px, height = 20px onclick="storeOrder('Cola')"></div>                     
+                                    <div id="botao"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Cola')"></i></div>                     
                                 </div>
 
                         </div>
@@ -147,11 +149,14 @@
                         </div>
                     </div>
                     <div class="supportButtons" >
-                       <div class="circleButtons" id="empregadoButton">
-                           <img src="images/empregado.png" class="imageButtons"> 
-                       </div>
-                       <div class="circleButtons" id="helpButton">
-                            <img src="images/help.png" class="imageButtons">
+                       <div display="inline-block">
+                           <div class="circleButtons" id="empregadoButton">
+                               <img src="images/empregado.png" class="imageButtons"> 
+                           </div>
+                           <div class="circleButtons" id="helpButton">
+                                <img src="images/help.png" class="imageButtons">
+                           </div>
+                           
                        </div>
                     </div>
                 </div>
