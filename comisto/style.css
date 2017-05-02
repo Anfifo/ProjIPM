@@ -9,7 +9,7 @@ html,body{
     width: 100vw;
     margin: 0px;
     padding: 0px;
-    background: url(images/wooden-planks-texture.jpg) no-repeat center center fixed;
+    background: url(images/woodBackgroud2.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -58,7 +58,7 @@ html,body{
 .buttons {
     height: 20%;
     width: 100%;
-    display: flex;
+    display: table;
 }
 
 .blocoNotas {
@@ -214,4 +214,41 @@ td.tableSelectButton{
 
 #tabContaDividida {
     border-bottom: 1px solid black;
+}
+
+#empregadoButton {
+    width: 10%;
+}
+
+#pagamentosButton {
+    width:20%;
+
+}
+
+#opinioesButton {
+    width: 30%;
+}
+
+#pedidosButton {
+    width: 30%;
+}
+
+#helpButton {
+    width: 20%;
+}
+
+.supportButtons {
+    display:table-cell;
+}
+
+.circleButtons {
+    border-radius: 50px;
+    background :rgba(255, 255, 255, 0.1);
+    display: table-cell;
+    height: 100%;
+}
+
+.mainButtons {
+    display:table-cell;
+    height: 100%;
 }
