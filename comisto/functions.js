@@ -5,12 +5,15 @@ $(document).ready(function() {
     $('#confirmOrderDiv').hide();
     $("#orderConfirmedDiv").hide();
     $("#divContaDividida").hide();
+    
+    
     $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.3)");
+    $('#pedidosButton').css("background","rgba(0, 0, 0, 0.3)");
     
     
     //associa ao click do botao de #ID a funcao:
     $('#pedidosButton').click(function() {
-        selectPedidos(); 
+        selectPedidos();
     });
     
     $('#pagamentosButton').click(function() {
@@ -42,26 +45,18 @@ $(document).ready(function() {
     
     
     $('#tabContaDividida').click(function(){
-        replaceDivs('#divContaDividida','#divContaPersonalizada');
-        
-        $('#tabContaDividida').css("border-bottom","none");
-        $('#tabContaPersonalizada').css("border-bottom","1px black solid");
-        $('#tabContaPersonalizada').css ("background","rgba(0, 0, 0, 0.3)");
-        $('#tabContaDividida').css ("background","inherit");
+        activateContaDividida();
     });
     
     
     
     $('#tabContaPersonalizada').click(function(){
-        replaceDivs('#divContaPersonalizada','#divContaDividida');
-        
-        $('#tabContaPersonalizada').css("border-bottom","none");
-        $('#tabContaDividida').css("border-bottom","1px black solid");
-        $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.3)");
-        $('#tabContaPersonalizada').css("background","inherit");
+        activateContaPersonalizada();
     });
     
 });
+
+
 
 
 
@@ -230,9 +225,14 @@ function helpRequest(){
 }
 
 function selectBlocoNotas(temp){
+    console.log(currentSelected);
+    
     if (temp == currentSelected){
         currentSelected = null;
         $(temp).hide();
+        $('#pedidosButton').css("background","");
+        $('#pagamentosButton').css("background","");
+        $('#opinioesButton').css("background","");
         return;
     }
     
@@ -244,17 +244,46 @@ function selectBlocoNotas(temp){
 }
 
 function selectPedidos(){
+    $('#pedidosButton').css("background","rgba(0, 0, 0, 0.3)");
+    $('#pagamentosButton').css("background","");
+    $('#opinioesButton').css("background","");
     selectBlocoNotas('#Pedidos');
 }
 
 function selectPagamentos(){
+    $('#pedidosButton').css("background","");
+    $('#pagamentosButton').css("background","rgba(0, 0, 0, 0.3)");
+    $('#opinioesButton').css("background","");
     selectBlocoNotas('#Pagamentos');
 }
 
 function selectOpinioes(){
+    $('#pedidosButton').css("background","");
+    $('#pagamentosButton').css("background","");
+    $('#opinioesButton').css("background","rgba(0, 0, 0, 0.3)");
     selectBlocoNotas('#Opinioes');
 }
 
+
+
+// Pagamentos tabs
+function activateContaDividida(){
+        replaceDivs('#divContaDividida','#divContaPersonalizada');
+        
+        $('#tabContaDividida').css("border-bottom","none");
+        $('#tabContaPersonalizada').css("border-bottom","1px black solid");
+        $('#tabContaPersonalizada').css ("background","rgba(0, 0, 0, 0.3)");
+        $('#tabContaDividida').css ("background","inherit");
+}
+
+function activateContaPersonalizada(){
+        replaceDivs('#divContaPersonalizada','#divContaDividida');
+        
+        $('#tabContaPersonalizada').css("border-bottom","none");
+        $('#tabContaDividida').css("border-bottom","1px black solid");
+        $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.3)");
+        $('#tabContaPersonalizada').css("background","inherit");
+}
 
 
 
