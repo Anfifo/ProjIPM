@@ -22,10 +22,7 @@ $(document).ready(function() {
     
     $('#opinioesButton').click(function(){
         selectOpinioes();
-    });
-    
-    
-    
+    });    
     
     $('#pedirButton').click(function(){
         replaceDivs('#confirmOrderDiv', '#orderDiv');
@@ -140,7 +137,7 @@ ordered_plates.push(cola_plate);
     function does_a_fucking_print() {
         //console.log("I got printed");
         
-        console.log(totalPrice);
+        console.log(OrderCounter);
         
         
         //var plateName, platePrice;
@@ -215,7 +212,15 @@ ordered_plates.push(cola_plate);
     }
 
 
-
+    function checkBox(icon) {
+        does_a_fucking_print();
+        if(icon.className === "fa fa-check-square-o") {
+            icon.className = "fa fa-square-o";
+        }
+        else {
+            icon.className = "fa fa-check-square-o";
+        }
+    }
 
 
 
