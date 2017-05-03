@@ -167,34 +167,40 @@
     <!--BLOCO DE NOTAS-->
         <!--PEDIDOS-->
                 <div id="Pedidos" class="blocoNotas">
-                    <h2 onclick="selectPedidos()">Pedidos</h2>
+                        <div class="BlocoNotasHeader">
+                            <h2 onclick="selectPedidos()">Pedidos</h2>
+                        </div>
                     <div class = "centerBlocoNotas">
-                        <table id="tabelaPedidos">
-                        
-                        <col style="width:77%"><col style="width:15%"><col style="width:10%">
-                            
-                        </table>
-                    
-                    <div id="orderConfirmedDiv" class="alert" role="alert">
-                        <strong>Successo!</strong> O seu pedido foi enviado para a Cozinha e está a ser preparado.
-                    </div>
+                       <div class="interiorBlocoCenter">
+                            <table id="tabelaPedidos">
+
+                            <col style="width:77%"><col style="width:15%"><col style="width:10%">
+
+                            </table>
+
+                            <div id="orderConfirmedDiv" class="alert" role="alert">
+                                <strong>Successo!</strong> O seu pedido foi enviado para a Cozinha e está a ser preparado.
+                            </div>
+                       </div>
                     
                     </div>
                     <div id="orderDiv" class = "buttonsBlocoNotas">
                         
-                        <button type = "button" id="pedirButton">Pedir</button>
+                        <button type = "button" id="pedirButton" class="blocoNotasButton">Pedir</button>
                             
                     </div>
                     <div id="confirmOrderDiv" class ="buttonsBlocoNotas">
                             <p>Deseja enviar o seu pedido para a cozinha?</p>
-                            <button type = "button" id="confirmOrder" class="confirmButton">Confirmar</button>
-                            <button type = "button" id="cancelOrder" class="cancelButton" >Cancelar</button>
+                            <button type = "button" id="confirmOrder" class="confirmButton blocoNotasButton">Confirmar</button>
+                            <button type = "button" id="cancelOrder" class="cancelButton blocoNotasButton" >Cancelar</button>
                     </div>
                 </div>
                 
         <!--PAGAMENTOS-->
                 <div id="Pagamentos" class = "blocoNotas">
-                    <h2 onclick="selectPagamentos()">Pagamentos</h2>
+                    <div class="BlocoNotasHeader">
+                        <h2 onclick="selectPagamentos()">Pagamentos</h2>
+                    </div>
                     
                     <div class="centerBlocoNotas">
                         <div>
@@ -207,7 +213,7 @@
                         </div>
                         
                         
-                        <div id="divContaPersonalizada">
+                        <div id="divContaPersonalizada" class="interiorBlocoCenter">
                             <div class="contaUserBox">
                                 <div id="contaUserName" class="contaUserName">João</div>
                                 <div class="pedidosDoUser">
@@ -217,21 +223,22 @@
                             </div>
                         </div>
                         
-                        <div id="divContaDividida">
+                        <div id="divContaDividida" class="interiorBlocoCenter">
                             To do yet asd
                         </div>
                     </div>
                     
                     <div class="buttonsBlocoNotas">
-                        <button onclick="does_a_fucking_print()">Pagar com Multibanco</button>
-                        <button onclick="does_a_fucking_print()">Pagar com Dinheiro</button>
+                        <button onclick="does_a_fucking_print()" class="blocoNotasButton">Pagar com Multibanco</button>
+                        <button onclick="does_a_fucking_print()" class="blocoNotasButton">Pagar com Dinheiro</button>
                     </div>
                 </div>
 
                <!--OPINIOES-->
                 <div id ="Opinioes" class="blocoNotas">
-                    <h2 onclick="selectOpinioes()">Opiniões</h2>
-                    
+                    <div class="BlocoNotasHeader">
+                        <h2 onclick="selectOpinioes()">Opiniões</h2>
+                    </div>
                     <div class="centerBlocoNotas">
                         <div>
                             <table class="tabSelectButton">
