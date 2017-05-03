@@ -199,12 +199,14 @@ ordered_plates.push(cola_plate);
             numberOfEachPlate = parseInt(sessionStorage.getItem(plateName));
            
             while(numberOfEachPlate > 0) {
-                $("#tabelaConta").append("<tr><td class='plateNameTable'>" + plateName + "</td><td class='platePriceTable'>" + platePrice + "€</td></tr>");
+                $("#tabelaConta").append("<tr><td>" + plateName + "</td><td>" + platePrice + "€</td></tr>");
                 numberOfEachPlate--;
                 totalPrice += platePrice;   
             }
           
             sessionStorage.setItem(plateName, 0); //elimina todos os pedidos no menu dos pedidos (internamente)
+            $('#pricePlacePersonalizado').text(""+totalPrice);
+
         }
         
         //remove a tabela dos pedidos

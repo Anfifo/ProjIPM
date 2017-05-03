@@ -394,3 +394,19 @@ td.tableSelectButton{
     display: inline-flex;
     font-size: 100%;
 }
+
+
+#tabelaConta {
+    border-collapse: separate;
+    border-left: 1px solid black;
+}
+
+#tabelaConta td{
+    width: 10%;
+    padding: 10%;
+}
+
+.contaUserName {
+    font-size:120%;
+    padding-right: 5%;
+}
