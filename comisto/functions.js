@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('#confirmOrderDiv').hide();
     $("#orderConfirmedDiv").hide();
     $("#divContaDividida").hide();
-    
+    $('#confirmPaymentDiv').hide();
     
     $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.3)");
     $('#pedidosButton').css("background","rgba(0, 0, 0, 0.3)");
@@ -54,14 +54,28 @@ $(document).ready(function() {
      $('#empregadoButton').click(function(){
          if (empregadoButtonActive==false){
              empregadoButtonActive =true;
-            $('#empregadoButton').css ("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
+            $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
          }
         else{
             empregadoButtonActive= false;
             $('#empregadoButton').css("box-shadow","");
-        }
-            
+        }      
      });
+    
+
+    $('#payDinheiro').click(function(){
+        replaceDivs('#confirmPaymentDiv','#paymentButtons');
+        $("#payValueConfirm").text(""+totalPrice +" €");
+        $("#payMethodConfirm").text("Dinheiro");
+        
+    });
+    
+    $('#payMultibanco').click(function(){
+        replaceDivs('#confirmPaymentDiv','#paymentButtons');
+        $("#payValueConfirm").text(""+totalPrice);
+        $("#payMethodConfirm").text("Multibanco");
+        
+    });
 
 });
 

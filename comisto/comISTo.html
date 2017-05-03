@@ -228,14 +228,19 @@
                         </div>
                     </div>
                     
-                    <div class="buttonsBlocoNotas">
+                    <div class="buttonsBlocoNotas" id="paymentButtons">
                        <div class="footerBlocoNotas">
                            Total seleccionado: <span id="pricePlacePersonalizado"></span>
                        </div>
                        <div class="buttonsVerticalBlocoNotas">
-                            <button type ="button" class="blocoNotasButton">Pagar c/<br>Dinheiro</button>
-                            <button type ="button" class="blocoNotasButton" >Pagar c/<br>Multibanco</button>
+                            <button type ="button" class="blocoNotasButton" id="payDinheiro">Pagar c/<br>Dinheiro</button>
+                            <button type ="button" class="blocoNotasButton" id="payMultibanco">Pagar c/<br>Multibanco</button>
                        </div>
+                    </div>
+                    <div id="confirmPaymentDiv" class ="buttonsBlocoNotas">
+                        <p>Deseja pagar o valor <span id="payValueConfirm"></span> com <span id="payMethodConfirm"></span></p>
+                        <button type = "button" id="confirmPayment" class="confirmButton blocoNotasButton">Confirmar</button>
+                        <button type = "button" id="cancelPayment" class="cancelButton blocoNotasButton" >Cancelar</button>
                     </div>
                 </div>
 
