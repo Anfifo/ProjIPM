@@ -156,8 +156,8 @@ ordered_plates.push(cola_plate);
     function storeOrder(foodId) {
         var foodCount = parseInt(sessionStorage.getItem(foodId));
         sessionStorage.setItem(foodId, foodCount + 1);
-        $("#tabelaPedidos").append("<tr id='Pedido" + OrderCounter + "'><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><img alt='Pedido" + OrderCounter + "', src='images/woodenMinus.png', width = 20px, height = 20px onclick='removeTableEntry(alt)'></td></tr>");//faz update da lista de pedidos
-        OrderCounter++;
+        $("#tabelaPedidos").append("<tr id='Pedido" + OrderCounter + "'><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><i class='fa fa-minus',  aria-hidden='true', width = 20px, height = 20px, onclick=\"removeTableEntry('Pedido" + OrderCounter + "')\"></i></td></tr>");//faz update da lista de pedidos
+        OrderCounter++;                                                                                                                    /* <i class="fa fa-minus" aria-hidden="true"></i>*/
     } 
 
 
