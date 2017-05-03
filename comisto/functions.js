@@ -87,8 +87,10 @@ $(document).ready(function() {
     $('#confirmPayment').click(function(){
         replaceDivs('#paymentButtons','#confirmPaymentDiv');
         totalPrice = 0;
+        $("#tabelaConta > tr").remove();
+        $('#pricePlacePersonalizado').text(""+totalPrice);
+        
     });
-
 });
 
 var empregadoButtonActive= false;
