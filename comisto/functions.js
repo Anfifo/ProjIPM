@@ -199,7 +199,7 @@ ordered_plates.push(cola_plate);
             numberOfEachPlate = parseInt(sessionStorage.getItem(plateName));
            
             while(numberOfEachPlate > 0) {
-                $("#tabelaConta").append("<tr><td>Azul</td><td>João</td><td>" + plateName + "</td><td>" + platePrice + "€</td></tr>");
+                $("#tabelaConta").append("<tr><td class='plateNameTable'>" + plateName + "</td><td class='platePriceTable'>" + platePrice + "€</td></tr>");
                 numberOfEachPlate--;
                 totalPrice += platePrice;   
             }
