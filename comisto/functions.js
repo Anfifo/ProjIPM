@@ -65,7 +65,7 @@ $(document).ready(function() {
 
     $('#payDinheiro').click(function(){
         replaceDivs('#confirmPaymentDiv','#paymentButtons');
-        $("#payValueConfirm").text(""+totalPrice +" €");
+        $("#payValueConfirm").text(""+totalPrice +"€");
         $("#payMethodConfirm").text("Dinheiro");
         
     });
@@ -74,7 +74,16 @@ $(document).ready(function() {
         replaceDivs('#confirmPaymentDiv','#paymentButtons');
         $("#payValueConfirm").text(""+totalPrice);
         $("#payMethodConfirm").text("Multibanco");
-        
+    });
+    
+
+    $('#cancelPayment').click(function(){
+        replaceDivs('#paymentButtons','#confirmPaymentDiv');
+    });
+    
+    $('#confirmPayment').click(function(){
+        replaceDivs('#paymentButtons','#confirmPaymentDiv');
+        totalPrice = 0;
     });
 
 });
