@@ -6,6 +6,7 @@ $(document).ready(function() {
     $("#orderConfirmedDiv").hide();
     $("#divContaDividida").hide();
     $('#confirmPaymentDiv').hide();
+    $("#pedirButton").hide();
     
     $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.3)");
     $('#pedidosButton').css("background","rgba(0, 0, 0, 0.3)");
@@ -26,6 +27,8 @@ $(document).ready(function() {
     
     $('#pedirButton').click(function(){
         replaceDivs('#confirmOrderDiv', '#orderDiv');
+        $("#pedirButton").hide();
+        numeroPedidos = 0;
     });
     
     $('#cancelOrder').click(function(){
@@ -102,6 +105,7 @@ function replaceDivs(newDiv, oldDiv){
 // VARIAVEIS GLOBAIS
 var OrderCounter = 0; //nao mexer nisto, este contador so tem UM proposito
 var totalPrice = 0;
+var numeroPedidos = 0;
 
 //PLATE STRUCTURE
     function Plate(price, ingredients, name){
@@ -177,7 +181,9 @@ ordered_plates.push(cola_plate);
         var foodCount = parseInt(sessionStorage.getItem(foodId));
         sessionStorage.setItem(foodId, foodCount + 1);
         $("#tabelaPedidos").append("<tr id='Pedido" + OrderCounter + "'><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><i class='fa fa-minus',  aria-hidden='true', width = 20px, height = 20px, onclick=\"removeTableEntry('Pedido" + OrderCounter + "')\"></i></td></tr>");//faz update da lista de pedidos
-        OrderCounter++;                                                                                                                    /* <i class="fa fa-minus" aria-hidden="true"></i>*/
+        OrderCounter++;   
+        numeroPedidos++;
+        $("#pedirButton").show();
     } 
 
 
@@ -204,6 +210,11 @@ ordered_plates.push(cola_plate);
         var foodCount = parseInt(sessionStorage.getItem(foodId));
         sessionStorage.setItem(foodId, foodCount - 1);
         document.getElementById("tabelaPedidos").deleteRow(tr.rowIndex);
+        
+        numeroPedidos--;
+        if(numeroPedidos == 0) {
+            $("#pedirButton").hide();
+        }
     }
 
 // EFETUA O PEDIDO (rolepay :P) E METE NA CONTA PARA PAGAR
