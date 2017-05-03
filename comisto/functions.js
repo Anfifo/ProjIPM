@@ -9,7 +9,7 @@ $(document).ready(function() {
     
     $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.3)");
     $('#pedidosButton').css("background","rgba(0, 0, 0, 0.3)");
-    
+
     
     //associa ao click do botao de #ID a funcao:
     $('#pedidosButton').click(function() {
@@ -54,10 +54,21 @@ $(document).ready(function() {
         activateContaPersonalizada();
     });
     
+     $('#empregadoButton').click(function(){
+         if (empregadoButtonActive==false){
+             empregadoButtonActive =true;
+            $('#empregadoButton').css ("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
+         }
+        else{
+            empregadoButtonActive= false;
+            $('#empregadoButton').css("box-shadow","");
+        }
+            
+     });
+
 });
 
-
-
+var empregadoButtonActive= false;
 
 
 // shows new Div while hiding oldDiv
