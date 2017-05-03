@@ -94,7 +94,9 @@ html,body{
     height: 15%;
     position: relative;
     display: flex;
-    padding-top:5%;
+    padding-top:2%;
+    padding-bottom:2%;
+    position: relative;
 }
 
 
@@ -375,10 +377,18 @@ td.tableSelectButton{
 }
 
 .footerBlocoNotas {
+    display:inline-flex;
     height: 100%;
-    width: 75%;
+    width: 60%;
 }
 
 .tabSelectButton {
     /*height:20%;*/
+}
+
+.buttonsVerticalBlocoNotas {
+    height: 100%;
+    width:60%;
+    display: inline-flex;
+    font-size: 100%;
 }
