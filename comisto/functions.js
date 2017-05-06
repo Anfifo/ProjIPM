@@ -8,8 +8,8 @@ $(document).ready(function() {
     $('#confirmPaymentDiv').hide();
     $("#pedirButton").hide();
     
-    $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.3)");
-    $('#pedidosButton').css("background","rgba(0, 0, 0, 0.3)");
+    $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.2)");
+    $('#pedidosButton').css("background","rgba(0, 0, 0, 0.2)");
 
     
     //associa ao click do botao de #ID a funcao:
@@ -27,7 +27,6 @@ $(document).ready(function() {
     
     $('#pedirButton').click(function(){
         replaceDivs('#confirmOrderDiv', '#orderDiv');
-        $("#pedirButton").hide();
         numeroPedidos = 0;
     });
     
@@ -39,6 +38,7 @@ $(document).ready(function() {
         transferOrder();
         $("#orderConfirmedDiv").show().delay(5000).fadeOut();
         replaceDivs('#orderDiv','#confirmOrderDiv');
+        $("#pedirButton").hide();
         
     });
     
@@ -57,11 +57,17 @@ $(document).ready(function() {
      $('#empregadoButton').click(function(){
          if (empregadoButtonActive==false){
              empregadoButtonActive =true;
+             $("#empregadoImg").attr("src", "images/empregadoChamado.gif");
+             $("#empregadoImg").css("height","150%");
+             $("empregadoImg").css("width","150%");
             $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
          }
         else{
             empregadoButtonActive= false;
             $('#empregadoButton').css("box-shadow","");
+            $("#empregadoImg").css("height","");
+            $("empregadoImg").css("width","");
+            $("#empregadoImg").attr("src", "images/empregado.png");
         }      
      });
     
@@ -91,6 +97,11 @@ $(document).ready(function() {
         $('#pricePlacePersonalizado').text(""+totalPrice);
         
     });
+    
+    
+;
+    
+    
 });
 
 var empregadoButtonActive= false;
@@ -182,7 +193,32 @@ ordered_plates.push(cola_plate);
     function storeOrder(foodId) {
         var foodCount = parseInt(sessionStorage.getItem(foodId));
         sessionStorage.setItem(foodId, foodCount + 1);
-        $("#tabelaPedidos").append("<tr id='Pedido" + OrderCounter + "'><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><i class='fa fa-minus',  aria-hidden='true', width = 20px, height = 20px, onclick=\"removeTableEntry('Pedido" + OrderCounter + "')\"></i></td></tr>");//faz update da lista de pedidos
+        
+        //$("#tabelaPedidos").append("<tr id='Pedido" + OrderCounter + "'><td>" + foodId + "</td><td>" + findPlate(foodId).price + "€</td><td><i class='fa fa-minus',  aria-hidden='true', width = 20px, height = 20px, onclick=\"removeTableEntry('Pedido" + OrderCounter + "')\"></i></td></tr>");//faz update da lista de pedidos
+        
+        var id = "Pedido"+OrderCounter;
+        var tempForRemove = "removeTableEntry('" + id + "')";
+        console.log("Adding id:" + id);
+        
+        $("#tabelaPedidos").append($('<tr>')
+            .attr('id', id)
+            .append($('<td>')
+                    .text(foodId)
+                    .addClass("tabelaConta")
+            )
+            .append($('<td>')
+                   .text(findPlate(foodId).price +"€")
+                   .addClass("tabelaConta")
+            )
+            .append($('<td>')
+                    .append($('<i>')
+                        .attr("aria-hidden","true")
+                        .attr("onClick",tempForRemove)        
+                        .addClass("fa fa-minus")
+                    )
+            )
+        );        
+        
         OrderCounter++;   
         numeroPedidos++;
         $("#pedirButton").show();
@@ -207,6 +243,7 @@ ordered_plates.push(cola_plate);
 
 // ELIMINA UMA ROW DA TABELA DE PEDIDOS DADO O SEU ID
     function removeTableEntry(tableRowID) {
+        console.log("Removing table: " + tableRowID);
         var tr = document.getElementById(tableRowID);
         var foodId = tr.cells[0].innerHTML;
         var foodCount = parseInt(sessionStorage.getItem(foodId));
@@ -232,7 +269,18 @@ ordered_plates.push(cola_plate);
             numberOfEachPlate = parseInt(sessionStorage.getItem(plateName));
            
             while(numberOfEachPlate > 0) {
-                $("#tabelaConta").append("<tr><td>" + plateName + "</td><td>" + platePrice + "€</td></tr>");
+                $("#tabelaConta").append($('<tr>')
+                    .append($('<td>')
+                            .text(plateName)
+                            .addClass("tabelaConta")
+                        )
+                    .append($('<td>')
+                           .text(platePrice +"€")
+                           .addClass("tabelaConta")
+                        )
+                    );
+                
+                //$("#tabelaConta").append("<tr><td>" + plateName + "</td><td>" + platePrice + "€</td></tr>");
                 numberOfEachPlate--;
                 totalPrice += platePrice;   
             }
@@ -298,7 +346,7 @@ function selectBlocoNotas(temp){
 }
 
 function selectPedidos(){
-    $('#pedidosButton').css("background","rgba(0, 0, 0, 0.3)");
+    $('#pedidosButton').css("background","rgba(0, 0, 0, 0.2)");
     $('#pagamentosButton').css("background","");
     $('#opinioesButton').css("background","");
     selectBlocoNotas('#Pedidos');
@@ -306,7 +354,7 @@ function selectPedidos(){
 
 function selectPagamentos(){
     $('#pedidosButton').css("background","");
-    $('#pagamentosButton').css("background","rgba(0, 0, 0, 0.3)");
+    $('#pagamentosButton').css("background","rgba(0, 0, 0, 0.2)");
     $('#opinioesButton').css("background","");
     selectBlocoNotas('#Pagamentos');
 }
@@ -314,7 +362,7 @@ function selectPagamentos(){
 function selectOpinioes(){
     $('#pedidosButton').css("background","");
     $('#pagamentosButton').css("background","");
-    $('#opinioesButton').css("background","rgba(0, 0, 0, 0.3)");
+    $('#opinioesButton').css("background","rgba(0, 0, 0, 0.2)");
     selectBlocoNotas('#Opinioes');
 }
 
@@ -326,7 +374,7 @@ function activateContaDividida(){
         
         $('#tabContaDividida').css("border-bottom","none");
         $('#tabContaPersonalizada').css("border-bottom","1px black solid");
-        $('#tabContaPersonalizada').css ("background","rgba(0, 0, 0, 0.3)");
+        $('#tabContaPersonalizada').css ("background","rgba(0, 0, 0, 0.2)");
         $('#tabContaDividida').css ("background","inherit");
 }
 
@@ -335,7 +383,7 @@ function activateContaPersonalizada(){
         
         $('#tabContaPersonalizada').css("border-bottom","none");
         $('#tabContaDividida').css("border-bottom","1px black solid");
-        $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.3)");
+        $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.2)");
         $('#tabContaPersonalizada').css("background","inherit");
 }
 

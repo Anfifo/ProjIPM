@@ -120,7 +120,7 @@ html,body{
 .carta {
     margin-top: 12%;
     margin-left: 15%;
-
+   padding-top:5%; 
     width: 70%;
     height: 80%;
 
@@ -243,6 +243,7 @@ head {
 .contaUserBox {
     display: table;
     vertical-align: middle;
+    width: 100%;
 }
 
 .pedidosDoUser {
@@ -398,14 +399,31 @@ td.tableSelectButton{
 #tabelaConta {
     border-collapse: separate;
     border-left: 1px solid black;
+    width: 100%;
 }
 
-#tabelaConta td{
-    width: 10%;
-    padding: 10%;
+#tabelaConta tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.1)
+}
+
+.tabelaConta{
+    padding: 5%;
 }
 
 .contaUserName {
     font-size:120%;
     padding-right: 5%;
 }
+
+#empregadoImg {
+    background: none;
+    border:none;
+}
+
+#tabelaPedidos {
+ width : 100%;   
+}
+#tabelaPedidos tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.1)
+}
+
