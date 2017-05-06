@@ -31,7 +31,7 @@
 <!--TOP-->
     <div id="top" class="topDiv"> 
         <div class="imgLogoDiv">
-            <img src="images/comISToFancy.png" id="topLogo">
+            <img src="images/comISToFancy.png" id="topLogo" >
         </div>
 <!--        <button id="testButt"> PRESS THIS FOR RANDOMNESS</button>  me no gusta -->
    
@@ -120,7 +120,7 @@
 <!--MIDDLE (PRATO)-->
             <div class="botMiddle">
                 <div class="nome">
-                    
+<!--                    <span class="userName"></span>-->
                 </div>
                 
                 <div class="prato">
@@ -177,9 +177,8 @@
                         </div>
                     <div class = "centerBlocoNotas">
                        <div class="interiorBlocoCenter">
+                            
                             <table id="tabelaPedidos">
-
-                            <col style="width:80%"><col style="width:15%"><col style="width:15%">
 
                             </table>
 
@@ -255,15 +254,31 @@
                         <h2 onclick="selectOpinioes()">Opiniões</h2>
                     </div>
                     <div class="centerBlocoNotas">
-                        <div>
-                            <table class="tabSelectButton">
-                               <tr>
-                                   <td id="tabEscreverOpinioes" class="tableSelectButton">Escrever</td>
-                                   <td id="tabLerOpinioes" class="tableSelectButton">Ler</td>
-                               </tr>
-                           </table>
+                        <div class="writeReview">
+                           <div class="reviewInfo">
+                               <span class="userName"></span>, caso queira, avalie e deixe um comentário sobre o restaurante.
+                           </div>
+                            <div class="starsRateDiv">
+                                *insert estrelinhas here*
+                            </div>
+                            <div class="textInput">
+                                <textarea name="review" id="inputReviewText" cols="33" rows="5"></textarea>
+                            </div>
+                            <div class="submitButton">
+                                <button>Submit</button>
+                            </div>
                         </div>
-                    </div>
+                        <div class="existingReviews">
+                            <div class="reviewUserName">
+                                Miguel
+                            </div>
+                            <div class="reviewUserRate">
+                                4/20
+                            </div>
+                            <div class="reviewUserText">
+                                needs more stars
+                            </div>
+                        </div>
                     <div class ="buttonsBlocoNotas">
                         
                     </div>

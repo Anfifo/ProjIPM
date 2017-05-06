@@ -39,8 +39,9 @@ html,body{
     font-size: large;
 
     background: url(images/Ardosia.png) no-repeat;
-    
     background-size: 100% 100%;
+    -webkit-filter: drop-shadow(10px 10px 10px rgba(0,0,0, 1));
+    filter: drop-shadow(10px 10px 10px rgba(0,0,0, 1));
 }
 
 
@@ -80,8 +81,10 @@ html,body{
     background-image: url("images/blankNotas.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    box-shadow: 10px 10px 10px rgba(0,0,0, 0.3);
+    
     border-radius: 10px;
+
+    box-shadow: 10px 10px 10px rgba(0,0,0, 0.5);
 }
 
 
@@ -114,6 +117,9 @@ html,body{
     height: 90%;
     background: url(images/plate.png);    
     background-size: 100% 100%;
+    
+    -webkit-filter: drop-shadow(10px 10px 10px rgba(0,0,0, 1));
+    filter: drop-shadow(10px 10px 10px rgba(0,0,0, 1));
 }
 
 
@@ -347,7 +353,8 @@ td.tableSelectButton{
 #topLogo {
     margin:auto;
     display: block;
-    max-height: 100%;
+    padding-top:5px;
+    max-height: 80%;
     max-width: 100%;
 }
 
@@ -427,3 +434,9 @@ td.tableSelectButton{
     background: rgba(0, 0, 0, 0.1)
 }
 
+
+.existingReviews {
+    border:1px solid black;
+    padding:5%;
+    margin-top:10%;
+}

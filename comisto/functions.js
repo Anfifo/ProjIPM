@@ -11,6 +11,7 @@ $(document).ready(function() {
     $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.2)");
     $('#pedidosButton').css("background","rgba(0, 0, 0, 0.2)");
 
+    $('.userName').text('João');
     
     //associa ao click do botao de #ID a funcao:
     $('#pedidosButton').click(function() {
@@ -222,6 +223,7 @@ ordered_plates.push(cola_plate);
         OrderCounter++;   
         numeroPedidos++;
         $("#pedirButton").show();
+        activatePedidos();
     } 
 
 
@@ -324,6 +326,11 @@ function callWaiter(){
 
 function helpRequest(){
 
+}
+
+function activatePedidos(){
+    if(currentSelected != "#Pedidos")
+        selectPedidos();
 }
 
 function selectBlocoNotas(temp){
