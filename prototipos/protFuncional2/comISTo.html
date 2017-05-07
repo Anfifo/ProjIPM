@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<!--Incluir Jquery-->
+<script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+
+<script type="text/javascript" src="functions.js"></script>
+
+
+<link rel="stylesheet" href="bs.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+<!-- HTML CODE -->
+<head>
+    <title>Com.ISTo</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="utf-8">
+</head>
+
+
+<body onload="initializeDataStorage()">
+
+<!--TOP-->
+    <div id="top" class="topDiv"> 
+        <div class="imgLogoDiv">
+            <img src="images/comISToFancy.png" id="topLogo" >
+        </div>
+<!--        <button id="testButt"> PRESS THIS FOR RANDOMNESS</button>  me no gusta -->
+   
+    </div>
+    
+    
+    <div id="bottom" class="bottom">
+            
+            
+<!-- LEFT (CARTA) -->
+        <div class="botLeft">
+            <div class="carta">
+                <div align="center" class = "titulo">Menu</div>
+                <div align="center" class="info">(Toque no nome para mais info)</div>
+
+                <div id="tabelaCarta">
+                    <div id="Pratos_Principais"> <a data-toggle="collapse" href="#intComidas">Pratos Principais </a></div>
+
+                        <div id="intComidas" class="collapse">
+                            
+                            <div id="Burguellet" class="menu_entry">
+                                <div id="prato"> <a data-toggle="collapse" href="#ingBurguellet">- Burguellet </a></div>
+                                <div id="preco">8€</div>
+                                <div id="botao"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Burguellet')"></i> </div>                      
+                            </div>
+
+                            <div id="ingBurguellet" class="collapse">
+                                <p>Ingredientes:</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Carne</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Ovo</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Pao</p>
+                            </div>
+
+                            <div id="Bitoque" class="menu_entry">
+                                <div id="prato"><a data-toggle="collapse" href="#ingBitoque">- Bitoque </a></div>
+                                <div id="preco">10€</div>
+                                <div id="botao"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Bitoque')"></i></div>
+                            </div>
+
+                            <div id="ingBitoque" class="collapse">
+                                <p>Ingredientes:</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Alface</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Ovo</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Tomate</p>
+                            </div>
+
+                            <div id="EspargueteBolonhesa" class="menu_entry">
+                                    <div id="prato"><a data-toggle="collapse" href="#ingEsparguete">- Esparguete Bolonhesa </a></div>
+                                    <div id="preco">10€</div>
+                                    <div id="botao"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Esparguete à Bolonhesa')"></i></div>
+                            </div>
+                            
+                            <div id="ingEsparguete" class="collapse">
+                                <p>Ingredientes:</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Carne</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Esparguete</p>
+                                <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Tomatada</p>
+                            </div>
+
+                            
+                        </div>
+
+                        <div id="Bebidas"> <a data-toggle="collapse" href="#intBebidas">Bebidas </a></div>
+
+                            <div id="intBebidas" class="collapse">
+                                
+                                <div id="Agua">
+                                    <div id="prato">- Água</div>
+                                    <div id="preco">1€</div>
+                                    <div id="botao"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Água')"></i></div>                     
+                                </div>
+
+                                <div id="Cola">
+                                    <div id="prato">- Coca-Cola</div>
+                                    <div id="preco">1€</div>
+                                    <div id="botao"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Cola')"></i></div>                     
+                                </div>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+           
+               
+                   
+<!--MIDDLE (PRATO)-->
+            <div class="botMiddle">
+                <div class="nome">
+<!--                    <span class="userName"></span>-->
+                </div>
+                
+                <div class="prato">
+                    <!-- <img src="Untitled_Artwork.png" alt="" class = "prato"> -->
+                </div>
+            </div>
+        
+           
+           
+           
+           
+           
+           
+           
+           
+<!--RIGHT (BLOCO DE NOTAS + BOTOES)-->
+            <div class="botRight">
+    <!--BOTOES-->
+                <div class="buttons" >
+                    <div class="mainButtons">
+                        <div class="circleButtons" id="pedidosButton">
+                            <img src="images/pedido2.png" class="imageButtons">
+                            <p align="center">Pedidos</p>
+                        </div>
+                        <div class="circleButtons" id="opinioesButton">
+                            <img src="images/feedback1.png" class="imageButtons">
+                            <p align="center">Opiniões</p>
+
+                        </div>
+                        <div class="circleButtons" id="pagamentosButton">
+                            <img src="images/banknotes-xxl.png" class="imageButtons">
+                            <p align="center">Pagamentos</p>
+    
+                        </div>
+                    </div>
+                    <div class="supportButtons" >
+                       <div class="wrapperSupportButtons">
+                           <div class="circleHelpButtons" id="empregadoButton">
+                               <img src="images/empregado.png" class="imageHelpButtons" id="empregadoImg">
+                           </div>
+                           <div class="circleHelpButtons" id="helpButton">
+                                <img src="images/help.png" class="imageHelpButtons">
+                           </div>
+                           
+                       </div>
+                    </div>
+                </div>
+
+    <!--BLOCO DE NOTAS-->
+        <!--PEDIDOS-->
+                <div id="Pedidos" class="blocoNotas">
+                        <div class="BlocoNotasHeader">
+                            <h2 onclick="selectPedidos()">Pedidos</h2>
+                        </div>
+                    <div class = "centerBlocoNotas">
+                       <div class="interiorBlocoCenter">
+                            
+                            <table id="tabelaPedidos">
+
+                            </table>
+
+                            <div id="orderConfirmedDiv" class="alert" role="alert">
+                                <strong>Successo!</strong> O seu pedido foi enviado para a Cozinha e está a ser preparado.
+                            </div>
+                       </div>
+                    
+                    </div>
+                    <div id="orderDiv" class = "buttonsBlocoNotas">
+                        
+                        <button type = "button" id="pedirButton" class="blocoNotasButton">Pedir</button>
+                            
+                    </div>
+                    <div id="confirmOrderDiv" class ="buttonsBlocoNotas">
+                            <p>Deseja enviar o seu pedido para a cozinha?</p>
+                            <button type = "button" id="confirmOrder" class="confirmButton blocoNotasButton">Confirmar</button>
+                            <button type = "button" id="cancelOrder" class="cancelButton blocoNotasButton" >Cancelar</button>
+                    </div>
+                </div>
+                
+        <!--PAGAMENTOS-->
+                <div id="Pagamentos" class = "blocoNotas">
+                    <div class="BlocoNotasHeader">
+                        <h2 onclick="selectPagamentos()">Pagamentos</h2>
+                    </div>
+                    
+                    <div class="centerBlocoNotas">
+                        <div>
+                           <table class="tabSelectButton">
+                               <tr>
+                                   <td id="tabContaPersonalizada" class="tableSelectButton">Conta Personalizada</td>
+                                   <td id="tabContaDividida" class="tableSelectButton">Conta Dividida</td>
+                               </tr>
+                           </table>                            
+                        </div>
+                        
+                        
+                        <div id="divContaPersonalizada" class="interiorBlocoCenter">
+                            <div class="contaUserBox">
+                                <div id="contaUserName" class="contaUserName">João</div>
+                                <div class="pedidosDoUser">
+                                    <table id="tabelaConta">
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="divContaDividida" class="interiorBlocoCenter">
+                            To do yet asd
+                        </div>
+                    </div>
+                    
+                    <div class="buttonsBlocoNotas" id="paymentButtons">
+                       <div class="footerBlocoNotas">
+                           Total seleccionado: <span id="pricePlacePersonalizado"></span>
+                       </div>
+                       <div class="buttonsVerticalBlocoNotas">
+                            <button type ="button" class="blocoNotasButton" id="payDinheiro">Pagar c/<br>Dinheiro</button>
+                            <button type ="button" class="blocoNotasButton" id="payMultibanco">Pagar c/<br>Multibanco</button>
+                       </div>
+                    </div>
+                    <div id="confirmPaymentDiv" class ="buttonsBlocoNotas">
+                        <p>Deseja pagar <span id="payValueConfirm"></span> com <span id="payMethodConfirm"></span></p>
+                        <button type = "button" id="confirmPayment" class="confirmButton blocoNotasButton">Confirmar</button>
+                        <button type = "button" id="cancelPayment" class="cancelButton blocoNotasButton" >Cancelar</button>
+                    </div>
+                </div>
+
+               <!--OPINIOES-->
+                <div id ="Opinioes" class="blocoNotas">
+                    <div class="BlocoNotasHeader">
+                        <h2 onclick="selectOpinioes()">Opiniões</h2>
+                    </div>
+                    <div class="centerBlocoNotas">
+                        <div class="writeReview">
+                           <div class="reviewInfo">
+                               <span class="userName"></span>, caso queira, avalie e deixe um comentário sobre o restaurante.
+                           </div>
+                            <div class="starsRateDiv">
+                                *insert estrelinhas here*
+                            </div>
+                            <div class="textInput">
+                                <textarea name="review" id="inputReviewText" cols="33" rows="5"></textarea>
+                            </div>
+                            <div class="submitButton">
+                                <button>Submit</button>
+                            </div>
+                        </div>
+                        <div class="existingReviews">
+                            <div class="reviewUserName">
+                                Miguel
+                            </div>
+                            <div class="reviewUserRate">
+                                4/20
+                            </div>
+                            <div class="reviewUserText">
+                                needs more stars
+                            </div>
+                        </div>
+                    <div class ="buttonsBlocoNotas">
+                        
+                    </div>
+                </div>        
+            </div>
+    </div>    
+</body>
+
+
+</html>

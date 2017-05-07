@@ -1,0 +1,443 @@
+@font-face {
+    font-family: gizFont;
+    src: url(DK_Crayon_Crumble.ttf);
+}
+
+
+html,body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    background: url(images/woodBackgroud2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: gizFont;
+}
+
+.topDiv {
+    height: 20vh;
+    width: 100vw;
+    position: relative;
+    
+}
+
+.bottom {
+    height: 80vh;
+    width: 100vw;
+    display:flex;
+}
+
+
+.botLeft {
+    width: 28%;
+    height: 100%;
+    display: flex;
+    font-family: gizFont;
+    color: white;
+    font-size: large;
+
+    background: url(images/Ardosia.png) no-repeat;
+    background-size: 100% 100%;
+    -webkit-filter: drop-shadow(10px 10px 10px rgba(0,0,0, 1));
+    filter: drop-shadow(10px 10px 10px rgba(0,0,0, 1));
+}
+
+
+
+
+.botMiddle {
+    width: 44%;
+    height: 100%;
+
+}
+
+.botRight {
+    width: 28%;
+    height: 100%;
+    position:relative;
+}
+
+.buttons {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    position:relative;
+
+}
+
+.blocoNotas {
+    height: 70%;
+    width: auto;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding-left:5%;
+    padding-right:3%;
+    
+    overflow: auto;
+    position: relative;
+
+    background-image: url("images/blankNotas.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+    border-radius: 10px;
+
+    box-shadow: 10px 10px 10px rgba(0,0,0, 0.5);
+}
+
+
+.centerBlocoNotas {
+    height: 70%;
+
+    margin-right:3%;
+    border-top:1px solid black;
+}
+
+.buttonsBlocoNotas {
+    height: 15%;
+    position: relative;
+    display: flex;
+    padding-top:2%;
+    padding-bottom:2%;
+    position: relative;
+}
+
+
+
+
+.nome {
+    width: 100%;
+    height: 10%;
+}
+
+.prato {
+    width: 100%;
+    height: 90%;
+    background: url(images/plate.png);    
+    background-size: 100% 100%;
+    
+    -webkit-filter: drop-shadow(10px 10px 10px rgba(0,0,0, 1));
+    filter: drop-shadow(10px 10px 10px rgba(0,0,0, 1));
+}
+
+
+.carta {
+    margin-top: 12%;
+    margin-left: 15%;
+   padding-top:5%; 
+    width: 70%;
+    height: 80%;
+
+}
+
+.titulo {
+    font-size: 230%;
+}
+
+.info {
+    font-size: 80%;
+    margin-bottom: 8%;
+}
+
+#plus {
+    color: white;
+}
+
+#tabelaCarta {
+    padding-right: 10%;
+    overflow: auto;
+    height: 80%;
+}
+
+.menu_entry {
+    font-size: 100%;
+}
+
+.collapse .in .collapsing {
+    font-size: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 10px 6px 6px rgba(255,255,255,0.5); 
+}
+
+head {
+    align-content: center;
+}
+
+
+#Pratos_Principais {
+    padding-bottom: 5%;
+    font-size: 130%;
+}
+
+#Bebidas {
+    padding-bottom: 5%;   
+    font-size: 120%; 
+}
+
+
+#Burguellet {
+    display: flex;
+    padding-left: 10%;
+}
+
+#Bitoque {
+    display: flex;
+    padding-left: 10%;
+}
+
+#EspargueteBolonhesa {
+    display: flex;
+    padding-left: 10%;
+}
+
+#Agua {
+    display: flex;
+    padding-left: 10%;
+}
+
+#Cola {
+    display: flex;
+    padding-left: 10%;
+}
+
+
+#ingBurguellet {
+    padding-left: 20%;
+}
+
+#ingBitoque {
+    padding-left: 20%;
+}
+
+#ingEsparguete {
+    padding-left: 20%;
+}
+
+
+
+
+#prato {
+   width: 65%;
+   padding-bottom: 4%;
+}
+
+#preco {
+    width: 15%;
+    padding-left: 10%;
+    padding-bottom: 4%;
+}
+
+#botao {
+    padding-left: 10%;
+    padding-bottom: 4%;
+}
+
+
+
+
+
+.contaUserBox {
+    display: table;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.pedidosDoUser {
+    width 70%;
+    display: table-cell;
+}
+
+
+
+td.tableSelectButton{
+    font-size: 120%;
+    padding: 1%;
+    width: 40%;
+    margin-bottom: 5%;
+} 
+
+#tabContaPersonalizada {
+    border-right: 1px solid black;
+}
+
+#tabContaDividida {
+    border-bottom: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+#helpButton {
+
+}
+
+.supportButtons {
+    height:100%;
+    width:25%;
+    position:relative;
+    display:inline-flex;
+    position:relative;
+}
+
+.circleButtons {
+    align-self: center;
+    border-radius: 100%;
+    height: 55%;
+    width: 55;
+    padding:1%;
+    margin:1%;
+    background :rgba(255, 255, 255, 0.1);
+    display: block;
+}
+
+.mainButtons {
+    display:inline-flex;
+    height: 100%;
+    width:75%;
+    position:relative;
+    
+
+}
+
+.imageButtons {
+    max-width:100%;
+    max-height:100%;
+    padding: 1%;
+    margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.wrapperSupportButtons {
+    width: 100%;
+    height: 80%;
+    align-self: center;
+    position: relative;
+    display:inline-block;
+}
+
+.imageHelpButtons {
+    max-width:100%;
+    max-height:100%;
+    margin-left: auto;
+	margin-right: auto;
+	display: table;
+}
+
+.circleHelpButtons {
+    border-radius: 100%;
+    background :rgba(255, 255, 255, 0.1);
+    position: relative;
+    
+    padding: 10%;
+    height: 50%;
+    width: 70%;
+    display: block;
+}
+
+#topLogo {
+    margin:auto;
+    display: block;
+    padding-top:5px;
+    max-height: 80%;
+    max-width: 100%;
+}
+
+.imgLogoDiv {
+    position:relative;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+
+
+.BlocoNotasHeader {
+    height:15%;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.blocoNotasButton {
+    margin: auto;
+    align-self: right;
+}
+
+.interiorBlocoCenter {
+    height: 90%;
+    width: 100%;
+    padding: 5%;
+    overflow: auto;
+}
+
+.footerBlocoNotas {
+    display:inline-flex;
+    height: 100%;
+    width: 60%;
+}
+
+.tabSelectButton {
+    /*height:20%;*/
+}
+
+.buttonsVerticalBlocoNotas {
+    height: 100%;
+    width:60%;
+    display: inline-flex;
+    font-size: 100%;
+}
+
+
+#tabelaConta {
+    border-collapse: separate;
+    border-left: 1px solid black;
+    width: 100%;
+}
+
+#tabelaConta tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.1)
+}
+
+.tabelaConta{
+    padding: 5%;
+}
+
+.contaUserName {
+    font-size:120%;
+    padding-right: 5%;
+}
+
+#empregadoImg {
+    background: none;
+    border:none;
+}
+
+#tabelaPedidos {
+ width : 100%;   
+}
+#tabelaPedidos tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.1)
+}
+
+
+.existingReviews {
+    border:1px solid black;
+    padding:5%;
+    margin-top:10%;
+}
