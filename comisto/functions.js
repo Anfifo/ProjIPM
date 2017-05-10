@@ -11,9 +11,11 @@ $(document).ready(function() {
     chooseStars(5);
     addReview("Buddy","Best restaurante ever, 10/10 would come back!!");
     chooseStars(0);
+    starNumber = "Não Avaliado";
+
     
-    $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.2)");
-    $('#pedidosButton').css("background","rgba(0, 0, 0, 0.2)");
+    darkBackGround("#tabContaDividida");
+    darkBackGround("#pedidosButton");
 
     $('.userName').text('João');
     
@@ -132,6 +134,29 @@ $(document).ready(function() {
 
 var starNumber = "Não Avaliado";
 
+
+var empregadoButtonActive= false;
+var userName = "João";
+
+
+
+function darkBackGround(id){
+    $(id).css("background","rgba(255, 255, 255, 0.5)");
+//    $(id).css("border","2px solid black");
+
+}
+function removeBackground(id){
+    $(id).css("background","");
+//    $(id).css("border","");
+
+}
+
+function lightBackground(id){
+    $(id).css("background","rgba(255,255,255.0.3)");
+}
+
+
+
 function chooseStars(starCount){
     starNumber = ""+starCount;
     for (var i = 1; i <=starCount; i++ ){
@@ -143,10 +168,6 @@ function chooseStars(starCount){
         $(id).removeClass("fa-star").addClass("fa-star-o");
     }
 }
-
-
-var empregadoButtonActive= false;
-var userName = "João";
 
 
 function addReview(name, text){
@@ -175,8 +196,8 @@ function addReview(name, text){
         )   
     );
     
-    starNumber = "Não Avaliado";
     chooseStars(0);
+    starNumber = "Não Avaliado";
 }
 
 
@@ -412,9 +433,9 @@ function selectBlocoNotas(temp){
     if (temp == currentSelected){
         currentSelected = null;
         $(temp).hide();
-        $('#pedidosButton').css("background","");
-        $('#pagamentosButton').css("background","");
-        $('#opinioesButton').css("background","");
+        removeBackground("#pedidosButton");
+        removeBackground("#pagamentosButton");
+        removeBackground("#opinioesButton");
         return;
     }
     
@@ -426,23 +447,27 @@ function selectBlocoNotas(temp){
 }
 
 function selectPedidos(){
-    $('#pedidosButton').css("background","rgba(0, 0, 0, 0.2)");
-    $('#pagamentosButton').css("background","");
-    $('#opinioesButton').css("background","");
+    darkBackGround("#pedidosButton");
+    
+    removeBackground("#pagamentosButton");
+    removeBackground("#opinioesButton");
     selectBlocoNotas('#Pedidos');
 }
 
 function selectPagamentos(){
-    $('#pedidosButton').css("background","");
-    $('#pagamentosButton').css("background","rgba(0, 0, 0, 0.2)");
-    $('#opinioesButton').css("background","");
+    
+    darkBackGround("#pagamentosButton");
+
+    removeBackground("#pedidosButton");
+    removeBackground("#opinioesButton");
     selectBlocoNotas('#Pagamentos');
 }
 
 function selectOpinioes(){
-    $('#pedidosButton').css("background","");
-    $('#pagamentosButton').css("background","");
-    $('#opinioesButton').css("background","rgba(0, 0, 0, 0.2)");
+    darkBackGround('#opinioesButton');
+
+    removeBackground("#pedidosButton");
+    removeBackground("#pagamentosButton");
     selectBlocoNotas('#Opinioes');
 }
 
@@ -454,7 +479,9 @@ function activateContaDividida(){
         
         $('#tabContaDividida').css("border-bottom","none");
         $('#tabContaPersonalizada').css("border-bottom","1px black solid");
-        $('#tabContaPersonalizada').css ("background","rgba(0, 0, 0, 0.2)");
+        
+        darkBackGround("#tabContaPersonalizada");
+        
         $('#tabContaDividida').css ("background","inherit");
 }
 
@@ -463,24 +490,10 @@ function activateContaPersonalizada(){
         
         $('#tabContaPersonalizada').css("border-bottom","none");
         $('#tabContaDividida').css("border-bottom","1px black solid");
-        $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.2)");
+        darkBackGround("#tabContaDividida");
         $('#tabContaPersonalizada').css("background","inherit");
 }
 
 
 
 
-// Bloco de Notas auxiliar functions
-
-
-function selectSplitTotal(){
-    
-}
-
-function selectSplitPerPerson(){
-    
-}
-
-function selecVer(){
-    
-}

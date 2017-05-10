@@ -54,7 +54,7 @@
 
                     <div id="intComidas" class="collapse">
 
-                        <div id="Burguellet" class="menu_entry">
+                        <div id="Burguellet" class="menu_entry textoNormal">
                             <div class="pratoEntry entryCell"> <a data-toggle="collapse" href="#ingBurguellet">- Burguellet </a></div>
                             <div class="precoEntry entryCell">8€</div>
                             <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Burguellet')"></i></div>        
@@ -67,7 +67,7 @@
                             <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Pao</p>
                         </div>
 
-                        <div id="Bitoque" class="menu_entry">
+                        <div id="Bitoque" class="menu_entry textoNormal">
                             <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingBitoque">- Bitoque </a></div>
                             <div class="precoEntry entryCell">10€</div>
                             <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Bitoque')"></i></div>
@@ -80,7 +80,7 @@
                             <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Tomate</p>
                         </div>
 
-                        <div id="EspargueteBolonhesa" class="menu_entry">
+                        <div id="EspargueteBolonhesa" class="menu_entry textoNormal">
                                 <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingEsparguete">- Bolonhesa </a></div>
                                 <div class="precoEntry entryCell">10€</div>
                                 <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Esparguete à Bolonhesa')"></i></div>
@@ -100,13 +100,13 @@
 
                     <div id="intBebidas" class="collapse">
 
-                        <div id="Agua" class="menu_entry">
+                        <div id="Agua" class="menu_entry textoNormal">
                             <div class="pratoEntry entryCell">- Água</div>
                             <div class="precoEntry entryCell">1€</div>
                             <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Água')"></i></div>                     
                         </div>
 
-                        <div id="Cola" class="menu_entry">
+                        <div id="Cola" class="menu_entry textoNormal">
                             <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingCola">- Coca-Cola </a></div>
                             <div class="precoEntry entryCell">1€</div>
                             <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Cola')"></i></div> 
@@ -131,9 +131,12 @@
 <!--                    <span class="userName"></span>-->
                 </div>
                 
-                <div class="prato">
-                    <!-- <img src="Untitled_Artwork.png" alt="" class = "prato"> -->
+                <div class="pratoWrapper">
+                    <div class="prato">
+                        <!-- <img src="Untitled_Artwork.png" alt="" class = "prato"> -->
+                    </div>
                 </div>
+                    
             </div>
         
            
@@ -142,8 +145,8 @@
            
            
            
-           
-           
+
+
 <!--RIGHT (BLOCO DE NOTAS + BOTOES)-->
             <div class="botRight">
     <!--BOTOES-->
@@ -151,18 +154,18 @@
                     <div class="mainButtons">
                         <div class="circleButtons" id="pedidosButton">
 <!--                            <img src="images/pedido2.png" class="imageButtons">-->
-                            <i class="fa fa-book fa-3x" aria-hidden="true"></i>
-                            <p align="center">Pedidos</p>
+                            <i class="fa fa-book fa-4x" aria-hidden="true"></i>
+                            <p align="center" class="textoNormal">Pedidos</p>
                         </div>
                         <div class="circleButtons" id="opinioesButton">
 <!--                            <img src="images/feedback1.png" class="imageButtons">-->
-                               <i class="fa fa-comments fa-3x" aria-hidden="true"></i>
-                            <p align="center">Opiniões</p>
+                               <i class="fa fa-comments fa-4x" aria-hidden="true"></i>
+                            <p align="center" class="textoNormal">Opiniões</p>
                         </div>
                         <div class="circleButtons" id="pagamentosButton">
 <!--                            <img src="images/banknotes-xxl.png" class="imageButtons">-->
-                            <i class="fa fa-money fa-3x" aria-hidden="true"></i>
-                            <p align="center">Pagamentos</p>
+                            <i class="fa fa-money fa-4x" aria-hidden="true"></i>
+                            <p align="center" class="textoNormal">Conta</p>
     
                         </div>
                     </div>
@@ -182,7 +185,7 @@
 
     <!--BLOCO DE NOTAS-->
         <!--PEDIDOS-->
-                <div id="Pedidos" class="blocoNotas">
+                <div id="Pedidos" class="blocoNotas textoNormal">
                         <div class="BlocoNotasHeader titulo">
                             Pedidos
                         </div>
@@ -212,9 +215,9 @@
                 </div>
                 
         <!--PAGAMENTOS-->
-                <div id="Pagamentos" class = "blocoNotas">
+                <div id="Pagamentos" class = "blocoNotas textoNormal">
                     <div class="BlocoNotasHeader titulo">
-                        Pagamentos
+                        Conta
                     </div>
                     
                     <div class="centerBlocoNotas">
@@ -261,11 +264,11 @@
 
               
                <!--OPINIOES-->
-                <div id ="Opinioes" class="blocoNotas">
+                <div id ="Opinioes" class="blocoNotas textoNormal">
                     <div class="BlocoNotasHeader titulo">
                         Opiniões
                     </div>
-                    <div class="centerBlocoNotas">
+                    <div class="centerBlocoNotasOpinioes">
                         <div class="writeReview">
                            <div class="reviewInfo">
                                <span class="userName"></span>, caso queira, avalie e comente sobre o restaurante.
@@ -298,9 +301,6 @@
                                 </div>
                             </div>
                         </div>
-                    <div class ="buttonsBlocoNotas">
-                        
-                    </div>
                 </div>        
             </div>
     </div>    
