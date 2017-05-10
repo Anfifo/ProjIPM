@@ -99,13 +99,45 @@ $(document).ready(function() {
         
     });
     
+    $('#inputReviewButton').click(function() {
+        var review = $('#inputReviewText').val();
+        console.log(review);
+        $('#inputReviewText').val('');
+        addReview(userName, "4/5", review);
+        //add review
+    });
     
-;
     
     
 });
 
 var empregadoButtonActive= false;
+var userName = "João";
+
+
+function addReview(name, rate, text){
+    console.log(name);
+    console.log(rate);
+    console.log(text);
+
+
+    $("#allReviews").prepend($('<div>')
+        .addClass("existingReview")
+        .append($('<div>')
+                .text(name)
+                .addClass("reviewUserName")
+        )
+        .append($('<div>')
+                .text(rate)
+                .addClass("reviewUserRate")
+        )
+        .append($('<div>')
+                .text(text)
+                .addClass("reviewUserText")
+        )   
+    );  
+}
+
 
 
 // shows new Div while hiding oldDiv

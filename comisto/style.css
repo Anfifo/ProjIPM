@@ -92,6 +92,7 @@ html,body{
 .centerBlocoNotas {
     height: 70%;
 
+    overflow: auto;
     margin-right:3%;
     border-top:1px solid black;
 }
@@ -125,11 +126,13 @@ html,body{
 
 
 .carta {
-    margin-top: 12%;
-    margin-left: 15%;
-   padding-top:5%; 
-    width: 70%;
-    height: 80%;
+/*    margin-top: 12%;*/
+/*    margin-left: 15%;*/
+    padding: 13%;
+    padding-left: 15%;
+    padding-top: 7vh;
+    width: 100%;    
+    height: 100%;
 
 }
 
@@ -290,6 +293,7 @@ td.tableSelectButton{
 .supportButtons {
     height:100%;
     width:25%;
+    padding-left: 0.5vw;
     position:relative;
     display:inline-flex;
     position:relative;
@@ -298,10 +302,10 @@ td.tableSelectButton{
 .circleButtons {
     align-self: center;
     border-radius: 100%;
-    height: 55%;
-    width: 55;
+    height: 10vh;
+    width: 10vh;
     padding:1%;
-    margin:1%;
+    margin:3%;
     background :rgba(255, 255, 255, 0.1);
     display: block;
 }
@@ -326,7 +330,7 @@ td.tableSelectButton{
 
 .wrapperSupportButtons {
     width: 100%;
-    height: 80%;
+    height: 100%;
     align-self: center;
     position: relative;
     display:inline-block;
@@ -346,8 +350,9 @@ td.tableSelectButton{
     position: relative;
     
     padding: 10%;
-    height: 50%;
-    width: 70%;
+    height: 7vh;
+    width: 7vh;
+    margin-top: 2vh;
     display: block;
 }
 
@@ -436,8 +441,32 @@ td.tableSelectButton{
 }
 
 
-.existingReviews {
+.existingReview {
     border:1px solid black;
     padding:5%;
     margin-top:10%;
+}
+
+
+
+.writeReview {
+    padding-top: 5%;
+
+}
+
+
+
+.textInput {
+    text-align: center;
+}
+
+.submitButton {
+    text-align: left;
+    padding-top: 1%;
+    padding-right: 5%;
+}
+
+.reviewUserName {
+    font-size: 110%;
+    text-decoration: underline black;
 }
