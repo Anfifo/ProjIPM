@@ -1,6 +1,7 @@
 @font-face {
     font-family: gizFont;
-    src: url(DK_Crayon_Crumble.ttf);
+/*    src: url(DK_Crayon_Crumble.ttf);*/
+    src: url(fonts/whatever\ it\ takes\ bold.ttf);
 }
 
 
@@ -21,6 +22,7 @@ html,body{
     height: 20vh;
     width: 100vw;
     position: relative;
+    display: inline-flex;
     
 }
 
@@ -46,12 +48,6 @@ html,body{
 }
 
 
-.titleFont{
-    
-}
-.tableFont{
-    
-}
 
 .botMiddle {
     width: 44%;
@@ -156,7 +152,7 @@ html,body{
 }
 
 .titulo {
-    font-size: 6vh;
+    font-size: 9vh;
 }
 
 .infoCarta {
@@ -314,11 +310,11 @@ td.tableSelectButton{
     
     
     border-radius: 100%;
+    padding:1vh;
+    height: 13vh;
+    width: 13vh;
     
-    height: 12vh;
-    width: 12vh;
-    
-    margin:3%;
+    margin:1.1vw;
     background :rgba(255, 255, 255, 0.2);
     display: inline-block;
 }
@@ -358,15 +354,18 @@ td.tableSelectButton{
 }
 
 .circleHelpButtons {
+    max-width: 15%;
+    margin:2%;
+    
     border-radius: 100%;
     background :rgba(255, 255, 255, 0.1);
     position: relative;
     
     text-align: center;
  
-    padding: 1vh;
-    height: 7vh;
-    width: 7vh;
+    padding: 1.5vh;
+    height: 10vh;
+    width: 10vh;
     margin-top: 2vh;
     display: block;
 }
@@ -382,7 +381,7 @@ td.tableSelectButton{
 .imgLogoDiv {
     position:relative;
     height: 100%;
-    width: 100%;
+    width: 80%;
     display: inline-block;
 }
 
@@ -500,7 +499,7 @@ td.tableSelectButton{
 
 
 .tituloPequeno {
-    font-size:4vh;
+    font-size:5vh;
 }
 
 .precoEntry {
@@ -535,5 +534,5 @@ td.tableSelectButton{
 }
 
 .textoNormal {
-    font-size: 2.7vh;
+    font-size: 3vh;
 }
