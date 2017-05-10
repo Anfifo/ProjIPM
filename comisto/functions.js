@@ -8,6 +8,10 @@ $(document).ready(function() {
     $('#confirmPaymentDiv').hide();
     $("#pedirButton").hide();
     
+    chooseStars(5);
+    addReview("Buddy","Best restaurante ever, 10/10 would come back!!");
+    chooseStars(0);
+    
     $('#tabContaDividida').css("background","rgba(0, 0, 0, 0.2)");
     $('#pedidosButton').css("background","rgba(0, 0, 0, 0.2)");
 
@@ -57,7 +61,7 @@ $(document).ready(function() {
     
      $('#empregadoButton').click(function(){
          if (empregadoButtonActive==false){
-             empregadoButtonActive =true;
+             empregadoButtonActive=true;
              $("#empregadoImg").attr("src", "images/empregadoChamado.gif");
              $("#empregadoImg").css("height","150%");
              $("empregadoImg").css("width","150%");
@@ -103,23 +107,57 @@ $(document).ready(function() {
         var review = $('#inputReviewText').val();
         console.log(review);
         $('#inputReviewText').val('');
-        addReview(userName, "4/5", review);
+        addReview(userName, review);
         //add review
     });
     
     
+    $('#1Star').click(function(){
+        chooseStars(1);
+    });
+    $('#2Star').click(function(){
+        chooseStars(2);
+    });
+    $('#3Star').click(function(){
+        chooseStars(3);
+    });
+    $('#4Star').click(function(){
+        chooseStars(4);
+    });
+    $('#5Star').click(function(){
+        chooseStars(5);
+    });
     
 });
+
+var starNumber = "Não Avaliado";
+
+function chooseStars(starCount){
+    starNumber = ""+starCount;
+    for (var i = 1; i <=starCount; i++ ){
+        id= "#"+ i + "Star";
+        $(id).removeClass("fa-star-o").addClass("fa-star");
+    }
+    for (var j = 5; j >= i; j-- ){
+        id= "#"+ j + "Star";
+        $(id).removeClass("fa-star").addClass("fa-star-o");
+    }
+}
+
 
 var empregadoButtonActive= false;
 var userName = "João";
 
 
-function addReview(name, rate, text){
+function addReview(name, text){
     console.log(name);
-    console.log(rate);
     console.log(text);
-
+    
+    if(starNumber.localeCompare("Não Avaliado") !== 0) {
+        starNumber += " Estrela(s)";
+    }
+    
+    starNumber = "Rating: " + starNumber;
 
     $("#allReviews").prepend($('<div>')
         .addClass("existingReview")
@@ -128,14 +166,17 @@ function addReview(name, rate, text){
                 .addClass("reviewUserName")
         )
         .append($('<div>')
-                .text(rate)
+                .text(starNumber)
                 .addClass("reviewUserRate")
         )
         .append($('<div>')
                 .text(text)
                 .addClass("reviewUserText")
         )   
-    );  
+    );
+    
+    starNumber = "Não Avaliado";
+    chooseStars(0);
 }
 
 
@@ -233,7 +274,7 @@ ordered_plates.push(cola_plate);
         var tempForRemove = "removeTableEntry('" + id + "')";
         console.log("Adding id:" + id);
         
-        $("#tabelaPedidos").append($('<tr>')
+        $("#tabelaPedidos").prepend($('<tr>')
             .attr('id', id)
             .append($('<td>')
                     .text(foodId)
@@ -247,7 +288,7 @@ ordered_plates.push(cola_plate);
                     .append($('<i>')
                         .attr("aria-hidden","true")
                         .attr("onClick",tempForRemove)        
-                        .addClass("fa fa-minus")
+                        .addClass("fa fa-times")
                     )
             )
         );        
