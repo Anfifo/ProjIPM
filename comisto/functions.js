@@ -14,7 +14,8 @@ $(document).ready(function() {
     starNumber = "Não Avaliado";
 
     
-    darkBackGround("#tabContaDividida");
+    $("#tabContaDividida").css("background","rgba(0, 0, 0, 0.2)");
+
     darkBackGround("#pedidosButton");
 
     $('.userName').text('João');
@@ -66,12 +67,17 @@ $(document).ready(function() {
              empregadoButtonActive=true;
              $("#empregadoImg").attr("src", "images/empregadoChamado.gif");
              $("#empregadoImg").css("height","150%");
-             $("empregadoImg").css("width","150%");
-            $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
+             $("#empregadoImg").css("width","150%");
+             $("#empregadoButton").css("box-shadow","inset 0 0 0.8em rgba(255,255,0,1), 0 0 0.8em rgba(255,255,0,1)");
+             $("#empregadoButton").css("border", "#ffff00 solid 2px");
+
+//            $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
          }
         else{
             empregadoButtonActive= false;
             $('#empregadoButton').css("box-shadow","");
+            $("#empregadoButton").css("border", "");
+
             $("#empregadoImg").css("height","");
             $("empregadoImg").css("width","");
             $("#empregadoImg").attr("src", "images/empregado.png");
@@ -482,7 +488,7 @@ function activateContaDividida(){
         $('#tabContaDividida').css("border-bottom","none");
         $('#tabContaPersonalizada').css("border-bottom","1px black solid");
         
-        darkBackGround("#tabContaPersonalizada");
+        $("#tabContaPersonalizada").css("background","rgba(0, 0, 0, 0.2)");
         
         $('#tabContaDividida').css ("background","inherit");
 }
@@ -492,7 +498,7 @@ function activateContaPersonalizada(){
         
         $('#tabContaPersonalizada').css("border-bottom","none");
         $('#tabContaDividida').css("border-bottom","1px black solid");
-        darkBackGround("#tabContaDividida");
+        $("#tabContaDividida").css("background","rgba(0, 0, 0, 0.2)");
         $('#tabContaPersonalizada').css("background","inherit");
 }
 
