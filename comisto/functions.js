@@ -133,21 +133,23 @@ $(document).ready(function() {
 });
 
 var starNumber = "Não Avaliado";
-
-
 var empregadoButtonActive= false;
 var userName = "João";
 
 
 
 function darkBackGround(id){
-    $(id).css("background","rgba(255, 255, 255, 0.5)");
-//    $(id).css("border","2px solid black");
+//    $(id).css("background","rgba(255, 255, 255, 0.5)");
+    
+    $(id).css("box-shadow","inset 0 0 0.8em rgba(255,255,255,0.3), 0 0 0.8em rgba(255,255,255,0.3)");
+    $(id).css("border", "#fff solid 2px");
 
 }
 function removeBackground(id){
     $(id).css("background","");
-//    $(id).css("border","");
+    $(id).css("box-shadow","");
+    $(id).css("border", "");
+    //    $(id).css("border","");
 
 }
 
