@@ -136,7 +136,7 @@
 <!--MIDDLE (PRATO)-->
             <div class="botMiddle">
                 <div class="nome">
-<!--                    <span class="userName"></span>-->
+                    <span class="userName titulo"></span>
                 </div>
                 
                 <div class="pratoWrapper">
@@ -215,13 +215,21 @@
                     </div>
                     <div id="orderDiv" class = "buttonsBlocoNotas">
                         
-                        <button type = "button" id="pedirButton" class="blocoNotasButton">Pedir</button>
+                        <div class="emptyLeft">
+                        </div>
+                        <div class="submitButtonDiv">
+                            <button type = "button" id="pedirButton" class="blocoNotasButton">Pedir</button> 
+                        </div>
                             
                     </div>
                     <div id="confirmOrderDiv" class ="buttonsBlocoNotas">
-                            <p>Deseja enviar o seu pedido para a cozinha?</p>
-                            <button type = "button" id="confirmOrder" class="confirmButton blocoNotasButton">Confirmar</button>
-                            <button type = "button" id="cancelOrder" class="cancelButton blocoNotasButton" >Cancelar</button>
+                           <div class="textSideDiv">
+                                <p>Deseja enviar o seu pedido para a cozinha?</p>
+                           </div>
+                           <div class="buttonSideDiv">
+                                <button type = "button" id="confirmOrder" class="blocoNotasButton">Confirmar</button>
+                                <button type = "button" id="cancelOrder" class="blocoNotasButton" >Cancelar</button>   
+                           </div>
                     </div>
                 </div>
                 
@@ -232,6 +240,7 @@
                     </div>
                     
                     <div class="centerBlocoNotas">
+<!--
                         <div>
                            <table class="tabSelectButton">
                                <tr>
@@ -240,11 +249,14 @@
                                </tr>
                            </table>                            
                         </div>
+-->
                         
                         
                         <div id="divContaPersonalizada" class="interiorBlocoCenter">
                             <div class="contaUserBox">
-                                <div id="contaUserName" class="contaUserName">João</div>
+                                <div id="contaUserName" class="contaUserName">
+                                    <span class="userName tituloPequeno"></span>
+                                </div>
                                 <div class="pedidosDoUser">
                                     <table id="tabelaConta">
                                     </table>
@@ -252,24 +264,30 @@
                             </div>
                         </div>
                         
+<!--
                         <div id="divContaDividida" class="interiorBlocoCenter">
                             To do yet asd
                         </div>
+-->
                     </div>
                     
                     <div class="buttonsBlocoNotas" id="paymentButtons">
-                       <div class="footerBlocoNotas">
-                           Total seleccionado: <span id="pricePlacePersonalizado"></span>
+                       <div class="textSideDiv">
+                           Total seleccionado:<br> <span id="pricePlacePersonalizado" class="tituloPequeno"></span>€
                        </div>
-                       <div class="buttonsVerticalBlocoNotas">
-                            <button type ="button" class="blocoNotasButton" id="payDinheiro">Pagar c/<br>Dinheiro</button>
-                            <button type ="button" class="blocoNotasButton" id="payMultibanco">Pagar c/<br>Multibanco</button>
+                       <div class="buttonSideDiv">
+                            <button type ="button" class="blocoNotasButton" id="payMultibanco">Multibanco</button>
+                            <button type ="button" class="blocoNotasButton" id="payDinheiro">Dinheiro</button>
                        </div>
                     </div>
                     <div id="confirmPaymentDiv" class ="buttonsBlocoNotas">
-                        <p>Deseja pagar <span id="payValueConfirm"></span> com <span id="payMethodConfirm"></span></p>
-                        <button type = "button" id="confirmPayment" class="confirmButton blocoNotasButton">Confirmar</button>
-                        <button type = "button" id="cancelPayment" class="cancelButton blocoNotasButton" >Cancelar</button>
+                        <div class="textSideDiv">
+                            <p>Deseja pagar <span id="payValueConfirm" class="tituloPequeno"></span>€<br> com <span id="payMethodConfirm" ></span>?</p>
+                        </div>
+                       <div class="buttonSideDiv">
+                            <button type = "button" id="confirmPayment" class="blocoNotasButton">Confirmar</button>
+                            <button type = "button" id="cancelPayment" class="blocoNotasButton" >Cancelar</button>                      
+                       </div>
                     </div>
                 </div>
 
@@ -295,8 +313,13 @@
                             <div class="textInput">
                                 <textarea placeholder="Deixe um comentário sobre o restaurante aqui." name="review" id="inputReviewText" cols="33" rows="5"></textarea>
                             </div>
-                            <div class="submitButton" id="inputReviewButtonDiv">
-                                <button id="inputReviewButton">Submeter</button>
+                            <div class="submitArea" id="inputReviewButtonDiv">
+                                <div class="emptyLeft">
+                                    
+                                </div>
+                                <div class="submitButtonDiv">
+                                    <button id="inputReviewButton">Submeter</button>
+                                </div>
                             </div>
                         </div>
                         <div id ="allReviews">

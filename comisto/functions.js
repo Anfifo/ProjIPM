@@ -136,6 +136,8 @@ $(document).ready(function() {
         chooseStars(5);
     });
     
+    
+    
 });
 
 var starNumber = "Não Avaliado";
@@ -311,9 +313,10 @@ ordered_plates.push(cola_plate);
             )
             .append($('<td>')
                    .text(findPlate(foodId).price +"€")
-                   .addClass("tabelaConta")
+                   .addClass("tabelaContaSmall")
             )
             .append($('<td>')
+                    .addClass("tabelaContaSmall")
                     .append($('<i>')
                         .attr("aria-hidden","true")
                         .attr("onClick",tempForRemove)        
@@ -380,9 +383,9 @@ ordered_plates.push(cola_plate);
                         )
                     .append($('<td>')
                            .text(platePrice +"€")
-                           .addClass("tabelaConta")
+                           .addClass("tabelaContaSmall")
                         )
-                    );
+                );
                 
                 //$("#tabelaConta").append("<tr><td>" + plateName + "</td><td>" + platePrice + "€</td></tr>");
                 numberOfEachPlate--;
