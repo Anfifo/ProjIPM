@@ -9,8 +9,6 @@ button{
     -moz-border-radius: 3%;
     border-radius: 10%;
     
-    margin-right: 1vmin;
-    margin-left: 1vmin;
     
     padding: 0.5vmin;
     border: solid #000000 0.2vmin;
@@ -373,7 +371,7 @@ td.tableSelectButton{
 .imgLogoDiv {
     position:relative;
     height: 100%;
-    width: 80%;
+    width: 85%;
     display: inline-block;
 }
 
@@ -475,6 +473,7 @@ td.tableSelectButton{
 .textInput {
     text-align: center;
     margin:none;
+    width:100%;
 }
 
 .submitArea {
@@ -539,12 +538,13 @@ td.tableSelectButton{
 
 #inputReviewText {
     width:100%;
+    margin: none;
 }
 
 .submitButtonDiv {
     width: 25%;
     padding:2%;
-    display: block;
+    display: inline-block;
 }
 
 .emptyLeft {
