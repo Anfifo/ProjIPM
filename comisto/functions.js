@@ -73,6 +73,10 @@ $(document).ready(function() {
     $('#confirmPayment').click(function(){          // mudei estar merda, se n tiveres satisfeito devesme 4h da minha vida
         replaceDivs('#paymentButtons','#confirmPaymentDiv');
         $("#tabelaConta > tr[class=contabilizado]").remove();
+        
+        for(var i = 0; i <otherUsers.length; i++)
+            $("#"+otherUsers[i]+"tabelaConta > tr[class=contabilizado]").remove();
+        
         atualizadorPagamento();
     });
     
@@ -95,6 +99,11 @@ $(document).ready(function() {
     $(document).click(function() {
         console.log(clickCounter++);
     });
+    
+    
+    addOtherUserPedido ("João2",["Bitoque", "Água"]);
+    addOtherUserPedido ("João3",["Água",]);
+
 });
 
 
@@ -108,6 +117,8 @@ var starNumber = "Não Avaliado";
 var empregadoButtonActive= false;
 var userName = "João";
 var currentSelected = '#Pedidos';
+var otherUsers = [];
+
 
 
 var OrderCounter = 0; //nao mexer nisto, este contador so tem UM proposito
@@ -319,6 +330,8 @@ function atualizadorPagamento() {
     $('#pricePlacePersonalizado').text("" + totalPrice);
 }
 
+
+//inutilizada a função?
 function checkBox(icon) {
     does_a_fucking_print();
     if(icon.className === "fa fa-check-square-o") {
@@ -375,7 +388,7 @@ function addReview(name, text){
         starNumber += " Estrela(s)";
     }
     
-    starNumber = "Rating: " + starNumber;
+    starNumber = "Classificação: " + starNumber;
 
     $("#allReviews").prepend($('<div>')
         .addClass("existingReview")
@@ -525,6 +538,93 @@ function lightBackground(id){
 
 
 
+
+
+
+
+//divContaPersonalizada
+// <div class="contaUserBox">
+//    <div id="contaUserName" class="contaUserName">
+//        <span class="userName tituloPequeno"></span>
+//    </div>
+//    <div class="pedidosDoUser">
+//        <table id="tabelaConta">
+//        </table>
+//    </div>
+//</div>
+
+
+
+
+
+
+
+var pedidosPriceRelation = {
+    "Bitoque":10,
+    "Burguellet":8,
+    "Bolonhesa":10,
+    "Água":1,
+    "Coca-Cola":1
+};
+
+
+
+function addOtherUserPedido (name, otherUserPedidos) {
+    if( otherUsers.indexOf(name) < 0){
+        otherUsers.push(name);
+    }
+    console.log("adding pedido de " + name);
+    var otherUserCounter = 0;
+    
+    $("#divContaPersonalizada").append($("<div>")
+        .addClass("contaUserBox")
+        .append($("<div>")
+            .addClass("contaUserName")
+            .append($("<span>")
+                .addClass("tituloPequeno")
+                .text(name)
+            )
+        )
+        .append($("<div>")
+            .addClass("pedidosDoUser")
+            .append($('<table>')
+                .attr("id", name+"tabelaConta")
+                .addClass("tabelaContaBox")
+            )
+        )
+    );
+
+    var len = otherUserPedidos.length;
+    
+    for(var i = 0; i < len; i++){
+        plate = otherUserPedidos[i];
+        platePrice = pedidosPriceRelation[plate];
+        console.log("+ prato " + plate);
+        console.log("+ preço " + platePrice);
+        
+        $("#" + name +"tabelaConta").append($('<tr>')
+            .attr("id", name+"Row"+otherUserCounter)
+            .append($('<td>')
+                .addClass("tabelaContaSmall")
+                .append($('<i>')
+                    .attr("aria-hidden","true")
+                    .attr("onClick","updatePrice(this,'" + name + "Row" + otherUserCounter + "'," + platePrice + ")")        
+                    .addClass("fa fa-square-o")
+                )
+            )
+            .append($("<td>")
+                .text(plate)
+                .addClass("tabelaConta")
+            )
+            .append($("<td>")
+                .text(platePrice +"€")
+                .addClass("tabelaContaSmall")
+            )
+        );
+        otherUserCounter++;
+    }    
+    atualizadorPagamento();
+}
 
 
 
