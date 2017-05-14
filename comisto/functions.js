@@ -36,7 +36,9 @@ $(document).ready(function() {
         transferOrder();
         $("#orderConfirmedDiv").show().delay(5000).fadeOut();
         replaceDivs('#orderDiv','#confirmOrderDiv');
-        $("#pedirButton").hide();
+//        $("#pedirButton").hide();
+        $("#pedirButton").fadeOut(500);
+
     });
     
         
@@ -108,6 +110,12 @@ $(document).ready(function() {
 
 
 
+
+
+
+
+
+
 /*********************
  +
  + Variaveis Globais
@@ -156,6 +164,14 @@ ordered_plates.push(espargueteBolonhesa_plate);
 ordered_plates.push(agua_plate);
 ordered_plates.push(cola_plate);
 
+
+var pedidosPriceRelation = {
+    "Bitoque":10,
+    "Burguellet":8,
+    "Bolonhesa":10,
+    "Água":1,
+    "Coca-Cola":1
+};
 
 
 
@@ -403,8 +419,8 @@ function addReview(name, text){
         .append($('<div>')
                 .text(text)
                 .addClass("reviewUserText")
-        )   
-    );
+        )
+    ).hide().fadeIn(1000);
     
     chooseStars(0);
     starNumber = "Não Avaliado";
@@ -456,7 +472,9 @@ function selectBlocoNotas(temp){
     
     if (temp == currentSelected){
         currentSelected = null;
-        $(temp).hide();
+//        $(temp).hide();
+        $(temp).fadeOut(500); 
+
         removeBackground("#pedidosButton");
         removeBackground("#pagamentosButton");
         removeBackground("#opinioesButton");
@@ -464,9 +482,11 @@ function selectBlocoNotas(temp){
     }
     
     else{
-        $(currentSelected).hide(); 
+        $(currentSelected).hide();
+//        replaceDivs(temp, currentSelected);
         currentSelected = temp;
         $(temp).show(); 
+
     }    
 }
 
@@ -497,8 +517,9 @@ function selectOpinioes(){
 
 // shows new Div while hiding oldDiv
 function replaceDivs(newDiv, oldDiv){
-    $(oldDiv).hide();
-    $(newDiv).show();    
+    $(oldDiv).fadeOut(300, function(){
+        $(newDiv).fadeIn(300);
+    });
 }
 
 
@@ -558,14 +579,6 @@ function lightBackground(id){
 
 
 
-
-var pedidosPriceRelation = {
-    "Bitoque":10,
-    "Burguellet":8,
-    "Bolonhesa":10,
-    "Água":1,
-    "Coca-Cola":1
-};
 
 
 
