@@ -7,6 +7,7 @@ $(document).ready(function() {
     $("#divContaDividida").hide();
     $('#confirmPaymentDiv').hide();
     $("#pedirButton").hide();
+    $('#helpDiv').hide();
     
     chooseStars(5);
     addReview("Buddy","Best restaurante ever, 10/10 would come back!!");
@@ -24,6 +25,10 @@ $(document).ready(function() {
     $('#pagamentosButton').click(function() { selectPagamentos(); });
     
     $('#opinioesButton').click(function(){ selectOpinioes(); });    
+
+    $('#empregadoButton').click(function(){ callEmpregado(); });
+    
+    $('#helpButton').click(function(){ showHelpInfo();});
     
     $('#pedirButton').click(function(){
         replaceDivs('#confirmOrderDiv', '#orderDiv');
@@ -42,8 +47,6 @@ $(document).ready(function() {
     });
     
         
-    
-    $('#empregadoButton').click(function(){ callEmpregado(); });
     
 
     $('#payDinheiro').click(function(){
@@ -92,15 +95,30 @@ $(document).ready(function() {
     });
     
     
+    $('#helpDiv').click(function(){ $('#helpDiv').hide(); });
+    
+    $('#closeHelpMenu').click(function(){
+        $('#helpDiv').hide();
+    });
+    
+    
+    
+    
+    
     $('#1Star').click(function(){ chooseStars(1); });
     $('#2Star').click(function(){ chooseStars(2); });
     $('#3Star').click(function(){ chooseStars(3); });
     $('#4Star').click(function(){ chooseStars(4); });
     $('#5Star').click(function(){ chooseStars(5); });
     
+    
     $(document).click(function() {
         console.log(clickCounter++);
     });
+    
+    
+    
+    
     
     
     addOtherUserPedido ("Maria",["Bitoque", "Água"]);
@@ -543,7 +561,9 @@ function callEmpregado(){
 }
 
 
-
+function showHelpInfo(){
+    $('#helpDiv').show();
+}
 
 
 

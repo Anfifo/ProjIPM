@@ -655,3 +655,19 @@ tr:nth-child(even) {
 .priceTag {
     font-size: 4.5vmin;
 }
+
+.helpPedidos {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: url(images/helpTest.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#helpDiv {
+    display:none;
+}
