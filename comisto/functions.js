@@ -10,15 +10,59 @@ $(document).ready(function() {
     $('#helpDiv').hide();
     
     chooseStars(5);
-    addReview("Buddy","Best restaurante ever, 10/10 would come back!!");
+    addReview("Jorge","Melhor restaurante da zona! Ótima comida e bom ambiente :)");
     chooseStars(0);
     starNumber = "Não Avaliado";
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+        $('#interrogationImage').click(function() {         /* isto funciona, é so meter as imagens correspondentes a cada div */
+            switch(currentSelected) {
+                case "#Pedidos":
+                    console.log("esta nos pedidos");
+                    break;
+                case "#Opinioes":
+                    console.log("esta nas opinioes");
+                    break;
+                case "#Pagamentos":
+                    console.log("esta nos pagamentos");
+                    break;
+                case null:
+                    console.log("esta no null");
+                    break;
+                default:
+                    console.log("merda da grossa aconteceu, n sei pk");
+                    break;
+            }
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     $("#tabContaDividida").css("background","rgba(0, 0, 0, 0.2)");
     darkBackGround("#pedidosButton");
     $('.userName').text(userName);
-    
     
     $('#pedidosButton').click(function() { selectPedidos(); });
     
@@ -122,7 +166,8 @@ $(document).ready(function() {
     
     
     addOtherUserPedido ("Maria",["Bitoque", "Água"]);
-    addOtherUserPedido ("Amélia",["Água","Burguellet"]);
+    addOtherUserPedido ("Joana",["Água","Burguellet"]);
+    addOtherUserPedido ("Diogo",["Lapas", "Coca-Cola", "Bolonhesa"]);
     
     
     $("textarea").css("background","rgba(200,200,200,0.3");
@@ -143,8 +188,6 @@ $(document).ready(function() {
 
 
 
-
-
 /*********************
  +
  + Variaveis Globais
@@ -152,7 +195,7 @@ $(document).ready(function() {
  *********************/
 var starNumber = "Não Avaliado";
 var empregadoButtonActive= false;
-var userName = "Tozé";
+var userName = "Duarte";
 var currentSelected = '#Pedidos';
 var otherUsers = [];
 
@@ -185,6 +228,28 @@ var agua_plate = new Plate(1, agua_ingredients, "Água");
 var cola_ingredients = ["Cafeína", "Açúcar", "Limão", "Gelo"];
 var cola_plate = new Plate(1, cola_ingredients, "Cola");
 
+var sopaPedra_ingredients = ["Enchidos","Pão"];
+var sopaPedra_plate = new Plate(5, sopaPedra_ingredients, "Sopa da Pedra");
+
+var sopaRabo_ingredients = ["Torras"];
+var sopaRabo_plate = new Plate(3, sopaRabo_ingredients, "Rabo de Boi");
+
+var canja_ingredients = [];
+var canja_plate = new Plate(3, canja_ingredients, "Canja");
+
+var sopaPeixe_ingredients = [];
+var sopaPeixe_plate = new Plate(4, sopaPeixe_ingredients, "Peixe");
+
+var lapas_ingredients = ["Molho Picante","XL"];
+var lapas_plate = new Plate(15, lapas_ingredients, "Lapas");
+
+var pao_ingredients = [];
+var pao_plate = new Plate(1, pao_ingredients, "Pao Alentejano");
+
+var batata_ingredients = [];
+var batata_plate = new Plate(2, batata_ingredients, "Batata Doce");
+
+
 // VETOR DE PRATOS TODOS DO RESTAURANTE
 var ordered_plates = [];
 ordered_plates.push(burguellet_plate);
@@ -192,6 +257,13 @@ ordered_plates.push(bitoque_plate);
 ordered_plates.push(espargueteBolonhesa_plate);
 ordered_plates.push(agua_plate);
 ordered_plates.push(cola_plate);
+ordered_plates.push(sopaPedra_plate);
+ordered_plates.push(sopaRabo_plate);
+ordered_plates.push(canja_plate);
+ordered_plates.push(sopaPeixe_plate);
+ordered_plates.push(lapas_plate);
+ordered_plates.push(pao_plate);
+ordered_plates.push(batata_plate);
 
 
 var pedidosPriceRelation = {
@@ -199,7 +271,14 @@ var pedidosPriceRelation = {
     "Burguellet":8,
     "Bolonhesa":10,
     "Água":1,
-    "Coca-Cola":1
+    "Coca-Cola":1,
+    "Sopa da Pedra":5,
+    "Rabo de Boi":3,
+    "Canja":3,
+    "Peixe":4,
+    "Lapas":15,
+    "Pao Alentejano":1,
+    "Batata Doce":2
 };
 
 
@@ -538,18 +617,18 @@ function replaceDivs(newDiv, oldDiv){
 
 
 function callEmpregado(){
-     if (empregadoButtonActive==false){
-     empregadoButtonActive=true;
-     $("#empregadoImg").attr("src", "images/empregadoChamado.gif");
-     $("#empregadoImg").css("height","150%");
-     $("#empregadoImg").css("width","150%");
-    $("#empregadoButton").css("box-shadow","0em 0em 0em 0.2em rgba(97,172,255,1) inset, 0em 0em 3em -0em rgba(97,172,255,1) inset");
-//     $("#empregadoButton").css("box-shadow","inset 0 0 0.8em rgba(97,172,255,1), 0 0 0.8em rgba(97,172,255,1)");
-     $("#empregadoButton").css("border", "rgba(97,172,255,1) solid 2px");
-
-//            $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
+    if (empregadoButtonActive==false) {
+        empregadoButtonActive=true;
+        /*$("#empregadoImg").attr("src", "images/empregadoChamado.gif");*/
+        $("#empregadoImg").css("height","150%");
+        $("#empregadoImg").css("width","150%");
+        $("#empregadoButton").css("box-shadow","0em 0em 0em 0.2em rgba(97,172,255,1) inset, 0em 0em 3em -0em rgba(97,172,255,1) inset");
+        /*     $("#empregadoButton").css("box-shadow","inset 0 0 0.8em rgba(97,172,255,1), 0 0 0.8em rgba(97,172,255,1)"); */
+        $("#empregadoButton").css("border", "rgba(97,172,255,1) solid 2px");
+        /*     $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
+        $("#empregadoImg").effect(shake, [duration])*/
     }
-    else{
+    else {
         empregadoButtonActive= false;
         $('#empregadoButton').css("box-shadow","");
         $("#empregadoButton").css("border", "");
@@ -579,7 +658,7 @@ function darkBackGround(id){
 //    $(id).css("background","rgba(255, 255, 255, 0.5)");
     
     $(id).css("box-shadow","0em 0em 0em 0.2em rgba(97,172,255,1) inset, 0em 0em 3em -0em rgba(97,172,255,1) inset");
-    $(id).css("border", "rgba(255,255,255) solid 2px");
+    $(id).css("border", "rgba(255,255,255) solid 2px");    
 
 }
 function removeBackground(id){

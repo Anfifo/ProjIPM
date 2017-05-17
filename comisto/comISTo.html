@@ -3,6 +3,7 @@
 
 <!--Incluir Jquery-->
 <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
 
 <script type="text/javascript" src="functions.js"></script>
 
@@ -39,7 +40,7 @@
         </div>
         
       <div class="circleHelpButtons" id="helpButton">
-            <img src="images/help.png" class="imageHelpButtons">
+            <img src="images/help.png" class="imageHelpButtons" id="interrogationImage">
 <!--                               <i class="fa fa-question fa-3x" aria-hidden="true"></i>-->
        </div>   
     </div>
@@ -56,26 +57,80 @@
 
                 <div id="tabelaCarta">
                     <div class="Pratos_Principais"> 
-                        <a data-toggle="collapse" href="#intComidas" class="tituloPequeno">Pratos Principais</a>
-                    </div>
+                        <a data-toggle="collapse" href="#intEntradas" class="tituloPequeno">- Entradas</a>
+                    </div> 
+                    
+                    <div id="intEntradas" class="collapse">
+                        
+                        <div id="Lapas" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingLapas">Lapas </a></div>
+                            <div class="precoEntry entryCell">15€</div>
+                            <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Lapas')"></i></div>
+                        </div>
 
+                        <div id="ingLapas" class="collapse paddingLeftIng">
+                            <p>Extra:</p>
+                            <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Molho Picante</p>
+                            <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> XL</p>
+                        </div>
+                        
+                        <div id="Pão Alentejano" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell">Pão Alentejano</div>
+                            <div class="precoEntry entryCell">1€</div>
+                            <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Pao Alentejano')"></i></div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="Pratos_Principais"> <a data-toggle="collapse" href="#intSopas" class="tituloPequeno">- Sopas </a>
+                    </div>
+                   
+                    <div id="intSopas" class="collapse">
+
+                        <div id="sopaPedra" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingSopaPedra">Pedra</a></div>
+                            <div class="precoEntry entryCell">5€</div>
+                            <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Sopa da Pedra')"></i></div>                     
+                        </div>
+                        
+                        <div id="ingSopaPedra" class="collapse paddingLeftIng">
+                           <p>Extras:</p>
+                             <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Pão</p>
+                             <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Enchidos</p>
+                        </div>
+                        
+                        <div id="sopaRaboBoi" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingRaboBoi">Rabo de Boi</a></div>
+                            <div class="precoEntry entryCell">3€</div>
+                            <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Rabo de Boi')"></i></div>                     
+                        </div>  
+                                                                           
+                        <div id="ingRaboBoi" class="collapse paddingLeftIng">
+                           <p>Extras:</p>
+                             <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Torras</p>
+                        </div>
+                                                                            
+                        <div id="sopaCanja" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell">Canja</div>
+                            <div class="precoEntry entryCell">3€</div>
+                            <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Canja')"></i></div>                     
+                        </div>
+                        
+                        <div id="sopaPeixe" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell">Peixe</div>
+                            <div class="precoEntry entryCell">4€</div>
+                            <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Peixe')"></i></div>                     
+                        </div>
+                        
+                    </div>
+                    <div class="Pratos_Principais"> 
+                        <a data-toggle="collapse" href="#intComidas" class="tituloPequeno">- Pratos Principais</a>
+                    </div>
+                    
                     <div id="intComidas" class="collapse">
 
-                        <div id="Burguellet" class="menu_entry textoNormal">
-                            <div class="pratoEntry entryCell"> <a data-toggle="collapse" href="#ingBurguellet">- Burguellet </a></div>
-                            <div class="precoEntry entryCell">8€</div>
-                            <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Burguellet')"></i></div>        
-                        </div>
-
-                        <div id="ingBurguellet" class="collapse">
-                            <p>Ingredientes:</p>
-                            <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Carne</p>
-                            <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Ovo</p>
-                            <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Pao</p>
-                        </div>
-
-                        <div id="Bitoque" class="menu_entry textoNormal">
-                            <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingBitoque">- Bitoque </a></div>
+                        <div id="Bitoque" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingBitoque">Bitoque </a></div>
                             <div class="precoEntry entryCell">10€</div>
                             <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Bitoque')"></i></div>
                         </div>
@@ -87,8 +142,8 @@
                             <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Tomate</p>
                         </div>
 
-                        <div id="EspargueteBolonhesa" class="menu_entry textoNormal">
-                                <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingEsparguete">- Bolonhesa </a></div>
+                        <div id="EspargueteBolonhesa" class="menu_entry textoNormal pratoMenu">
+                                <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingEsparguete">Bolonhesa </a></div>
                                 <div class="precoEntry entryCell">10€</div>
                                 <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Esparguete à Bolonhesa')"></i></div>
                         </div>
@@ -99,22 +154,38 @@
                             <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Esparguete</p>
                             <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Tomatada</p>
                         </div>
-                    </div>
+                        
+                        <div id="Burguellet" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell"> <a data-toggle="collapse" href="#ingBurguellet">Burguellet </a></div>
+                            <div class="precoEntry entryCell">8€</div>
+                            <div class="botaoEntry entryCell"><i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Burguellet')"></i></div>        
+                        </div>
 
+                        <div id="ingBurguellet" class="collapse">
+                            <p>Ingredientes:</p>
+                            <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Carne</p>
+                            <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Ovo</p>
+                            <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Pao</p>
+                        </div>
+                        
+                        
+
+                    </div>
                    
-                    <div class="Pratos_Principais"> <a data-toggle="collapse" href="#intBebidas" class="tituloPequeno">Bebidas </a>
+                   
+                    <div class="Pratos_Principais"> <a data-toggle="collapse" href="#intBebidas" class="tituloPequeno">- Bebidas </a>
                     </div>
 
                     <div id="intBebidas" class="collapse">
 
-                        <div id="Agua" class="menu_entry textoNormal">
-                            <div class="pratoEntry entryCell">- Água</div>
+                        <div id="Agua" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell">Água</div>
                             <div class="precoEntry entryCell">1€</div>
                             <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Água')"></i></div>                     
                         </div>
 
-                        <div id="Cola" class="menu_entry textoNormal">
-                            <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingCola">- Coca-Cola </a></div>
+                        <div id="Cola" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell"><a data-toggle="collapse" href="#ingCola">Coca-Cola </a></div>
                             <div class="precoEntry entryCell">1€</div>
                             <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Cola')"></i></div> 
                         </div>
@@ -124,6 +195,18 @@
                              <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Zero</p>
                              <p style="padding-left: 10%"><i class="fa fa-check-square-o" aria-hidden="true" onclick="checkBox(this)"></i> Sem cafeína</p>
                         </div>                
+                    </div>
+                    
+                    <div class="Pratos_Principais"> 
+                        <a data-toggle="collapse" href="#intSobremesa" class="tituloPequeno">- Sobremesas</a>
+                    </div>
+                    
+                    <div id="intSobremesa" class="collapse">
+                        <div id="BatataDoce" class="menu_entry textoNormal pratoMenu">
+                            <div class="pratoEntry entryCell">Batata Doce</div>
+                            <div class="precoEntry entryCell">2€</div>
+                            <div class="botaoEntry entryCell"> <i class="fa fa-plus fa-lg" id = "plus" aria-hidden="true" onclick="storeOrder('Batata Doce')"></i></div>                     
+                        </div>
                     </div>
                     
                 </div>
@@ -319,10 +402,10 @@
                                     Miguel
                                 </div>
                                 <div class="reviewUserRate">
-                                    4/20
+                                    Classificação: 4 Estrela(s)
                                 </div>
                                 <div class="reviewUserText">
-                                    needs more stars
+                                    A burguellet é fantástica :) O empregado, no entanto, foi bruto comigo.
                                 </div>
                             </div>
                         </div>
