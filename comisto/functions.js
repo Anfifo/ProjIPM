@@ -49,7 +49,7 @@ $(document).ready(function() {
     $('#payDinheiro').click(function(){
         if (!(totalPrice == 0)) {
             replaceDivs('#confirmPaymentDiv','#paymentButtons');
-            $("#payValueConfirm").text(""+totalPrice +"€");
+            $("#payValueConfirm").text(""+totalPrice);
             $("#payMethodConfirm").text("Dinheiro");
         }
         else {
@@ -103,8 +103,19 @@ $(document).ready(function() {
     });
     
     
-    addOtherUserPedido ("João2",["Bitoque", "Água"]);
-    addOtherUserPedido ("João3",["Água",]);
+    addOtherUserPedido ("Maria",["Bitoque", "Água"]);
+    addOtherUserPedido ("Amélia",["Água","Burguellet"]);
+    
+    
+    $("textarea").css("background","rgba(200,200,200,0.3");
+    
+    $("textarea").focus(function(){
+        $("textarea").css("background","");
+    });
+    
+    $("textarea").focusout(function(){
+        $("textarea").css("background","rgba(200,200,200,0.3");
+    });
 
 });
 
@@ -123,7 +134,7 @@ $(document).ready(function() {
  *********************/
 var starNumber = "Não Avaliado";
 var empregadoButtonActive= false;
-var userName = "João";
+var userName = "Tozé";
 var currentSelected = '#Pedidos';
 var otherUsers = [];
 
@@ -440,27 +451,6 @@ function addReview(name, text){
  +
  *******************/
 
-function callEmpregado(){
-     if (empregadoButtonActive==false){
-     empregadoButtonActive=true;
-     $("#empregadoImg").attr("src", "images/empregadoChamado.gif");
-     $("#empregadoImg").css("height","150%");
-     $("#empregadoImg").css("width","150%");
-     $("#empregadoButton").css("box-shadow","inset 0 0 0.8em rgba(255,255,0,1), 0 0 0.8em rgba(255,255,0,1)");
-     $("#empregadoButton").css("border", "#ffff00 solid 2px");
-
-//            $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
-    }
-    else{
-        empregadoButtonActive= false;
-        $('#empregadoButton').css("box-shadow","");
-        $("#empregadoButton").css("border", "");
-
-        $("#empregadoImg").css("height","");
-        $("empregadoImg").css("width","");
-        $("#empregadoImg").attr("src", "images/empregado.png");
-    }    
-}
 
 function activatePedidos(){
     if(currentSelected != "#Pedidos")
@@ -480,6 +470,12 @@ function selectBlocoNotas(temp){
         removeBackground("#opinioesButton");
         return;
     }
+    
+    if (currentSelected == null){
+        currentSelected = temp;
+        $(temp).fadeIn(500); 
+    }
+        
     
     else{
         $(currentSelected).hide();
@@ -523,6 +519,29 @@ function replaceDivs(newDiv, oldDiv){
 }
 
 
+function callEmpregado(){
+     if (empregadoButtonActive==false){
+     empregadoButtonActive=true;
+     $("#empregadoImg").attr("src", "images/empregadoChamado.gif");
+     $("#empregadoImg").css("height","150%");
+     $("#empregadoImg").css("width","150%");
+    $("#empregadoButton").css("box-shadow","0em 0em 0em 0.2em rgba(97,172,255,1) inset, 0em 0em 3em -0em rgba(97,172,255,1) inset");
+//     $("#empregadoButton").css("box-shadow","inset 0 0 0.8em rgba(97,172,255,1), 0 0 0.8em rgba(97,172,255,1)");
+     $("#empregadoButton").css("border", "rgba(97,172,255,1) solid 2px");
+
+//            $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
+    }
+    else{
+        empregadoButtonActive= false;
+        $('#empregadoButton').css("box-shadow","");
+        $("#empregadoButton").css("border", "");
+
+        $("#empregadoImg").css("height","");
+        $("empregadoImg").css("width","");
+        $("#empregadoImg").attr("src", "images/empregado.png");
+    }    
+}
+
 
 
 
@@ -539,8 +558,8 @@ function replaceDivs(newDiv, oldDiv){
 function darkBackGround(id){
 //    $(id).css("background","rgba(255, 255, 255, 0.5)");
     
-    $(id).css("box-shadow","inset 0 0 0.8em rgba(255,255,255,0.3), 0 0 0.8em rgba(255,255,255,0.3)");
-    $(id).css("border", "#fff solid 2px");
+    $(id).css("box-shadow","0em 0em 0em 0.2em rgba(97,172,255,1) inset, 0em 0em 3em -0em rgba(97,172,255,1) inset");
+    $(id).css("border", "rgba(255,255,255) solid 2px");
 
 }
 function removeBackground(id){
@@ -593,8 +612,9 @@ function addOtherUserPedido (name, otherUserPedidos) {
         .addClass("contaUserBox")
         .append($("<div>")
             .addClass("contaUserName")
+            .attr("id", name+"Name")
             .append($("<span>")
-                .addClass("tituloPequeno")
+                .addClass("textoNormal")
                 .text(name)
             )
         )
@@ -616,7 +636,7 @@ function addOtherUserPedido (name, otherUserPedidos) {
         console.log("+ preço " + platePrice);
         
         $("#" + name +"tabelaConta").append($('<tr>')
-            .attr("id", name+"Row"+otherUserCounter)
+            .attr("id", name + "Row" + otherUserCounter)
             .append($('<td>')
                 .addClass("tabelaContaSmall")
                 .append($('<i>')
@@ -637,6 +657,13 @@ function addOtherUserPedido (name, otherUserPedidos) {
         otherUserCounter++;
     }    
     atualizadorPagamento();
+    
+//    $('#'+name+"Name").css('font-size', '1em');
+//    
+//    while( $('#'+name+"Name"+" span").height() > $('#fitin').height() ) {
+//        $('#'+name+"Name"+ " span").css('font-size', (parseInt($('#fitin div').css('font-size')) - 1) + "px" );
+//    }
+    
 }
 
 

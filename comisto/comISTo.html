@@ -183,7 +183,7 @@
                                <img src="images/empregado.png" class="imageHelpButtons" id="empregadoImg">
                            </div>
 
-                           <div class="circleHelpButtons" id="helpButton">
+                           <div class="circleHelpButtons" id="helpButton">BlocoNotasHeader
                                 <img src="images/help.png" class="imageHelpButtons">
                                <i class="fa fa-question fa-3x" aria-hidden="true"></i>
                            </div>
@@ -202,13 +202,21 @@
                     <div class = "centerBlocoNotas">
                        <div class="interiorBlocoCenter">
                             
+                            <div id="helpBlocoDeNotasPedido" class="textoNormal">
+                                Através do Menu do lado esquerdo escolha <br> o seu pedido.
+                            </div>
+                            
+                            <div id="orderConfirmedDiv" class="textoNormal" role="alert">
+                                <br><br><br><br>
+                                <div class="boxDoMiguel textoNormal">
+                                    <strong>Successo!</strong> O seu pedido foi enviado para a Cozinha e está a ser preparado.
+                                </div>
+                                <br><br><br><br>
+                            </div>
                             <table id="tabelaPedidos">
 
                             </table>
 
-                            <div id="orderConfirmedDiv" class="alert" role="alert">
-                                <strong>Successo!</strong> O seu pedido foi enviado para a Cozinha e está a ser preparado.
-                            </div>
                        </div>
                     
                     </div>
@@ -239,22 +247,12 @@
                     </div>
                     
                     <div class="centerBlocoNotas">
-<!--
-                        <div>
-                           <table class="tabSelectButton">
-                               <tr>
-                                   <td id="tabContaPersonalizada" class="tableSelectButton">Conta Personalizada</td>
-                                   <td id="tabContaDividida" class="tableSelectButton">Conta Dividida</td>
-                               </tr>
-                           </table>                            
-                        </div>
--->
                         
                         
                         <div id="divContaPersonalizada" class="interiorBlocoCenter">
                             <div class="contaUserBox">
                                 <div id="contaUserName" class="contaUserName">
-                                    <span class="userName tituloPequeno"></span>
+                                    <span class="userName textoNormal"></span>
                                 </div>
                                 <div class="pedidosDoUser">
                                     <table id="tabelaConta" class="tabelaContaBox">
@@ -262,12 +260,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-<!--
-                        <div id="divContaDividida" class="interiorBlocoCenter">
-                            To do yet asd
-                        </div>
--->
                     </div>
                     
                     <div class="buttonsBlocoNotas" id="paymentButtons">
@@ -281,7 +273,7 @@
                     </div>
                     <div id="confirmPaymentDiv" class ="buttonsBlocoNotas">
                         <div class="textSideDiv">
-                            <p>Deseja pagar <span id="payValueConfirm" class="tituloPequeno"></span>€<br> com <span id="payMethodConfirm" ></span>?</p>
+                            <p>Deseja pagar <span id="payValueConfirm" class="priceTag"></span>€<br> com <span id="payMethodConfirm" ></span>?</p>
                         </div>
                        <div class="buttonSideDiv">
                             <button type = "button" id="confirmPayment" class="blocoNotasButton">Confirmar</button>
@@ -299,18 +291,18 @@
                     <div class="centerBlocoNotasOpinioes">
                         <div class="writeReview">
                            <div class="reviewInfo">
-                               <span class="userName"></span>, caso queira, avalie e comente sobre o restaurante.
+                               Caso queira, comente e avalie o restaurante.
                            </div>
-                            <div class="starsRateDiv">
-                                <i id="1Star" class="fa fa-star-o " aria-hidden="true"></i>
-                                <i id="2Star" class="fa fa-star-o " aria-hidden="true"></i>
-                                <i id="3Star" class="fa fa-star-o " aria-hidden="true"></i>
-                                <i id="4Star" class="fa fa-star-o " aria-hidden="true"></i>
-                                <i id="5Star" class="fa fa-star-o " aria-hidden="true" ></i>
+                            <div class="starsRateDiv tituloPequeno">
+                                <i id="1Star" class="fa fa-star-o " aria-hidden="true">&nbsp;</i>
+                                <i id="2Star" class="fa fa-star-o " aria-hidden="true">&nbsp;</i>
+                                <i id="3Star" class="fa fa-star-o " aria-hidden="true">&nbsp;</i>
+                                <i id="4Star" class="fa fa-star-o " aria-hidden="true">&nbsp;</i>
+                                <i id="5Star" class="fa fa-star-o " aria-hidden="true"></i>
 
                             </div>
                             <div class="textInput">
-                                <textarea placeholder="Deixe um comentário sobre o restaurante aqui." name="review" id="inputReviewText" cols="33" rows="5"></textarea>
+                                <textarea placeholder="Deixe um comentário sobre o restaurante aqui." name="review" id="inputReviewText" cols="33" rows="3"></textarea>
                             </div>
                             <div class="submitArea" id="inputReviewButtonDiv">
                                 <div class="emptyLeft">
@@ -336,7 +328,39 @@
                         </div>
                 </div>        
             </div>
+    </div>
+    
+<!--
+    <div class="helpOverlay">
+
+        <div class="topDiv"> 
+        o miguel é fag
+        </div>
+
+        <div class="bottom">
+            <div>
+
+            </div>
+            <div class="botMiddle">
+                <div class="nome">
+                </div>
+
+                <div class="pratoWrapper">
+
+                </div>
+            </div>
+            <div class="botRight">
+                <div class="buttons" >
+                    <div class="mainButtons">
+                    </div>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+        </div>
     </div>    
+-->
 </body>
 
 
