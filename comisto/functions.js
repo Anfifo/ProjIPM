@@ -17,60 +17,28 @@ $(document).ready(function() {
     
     
     
-    
-    
-    
-    
-    
-    
-        $('#interrogationImage').click(function() {         /* isto funciona, é so meter as imagens correspondentes a cada div */
-            switch(currentSelected) {
-                case "#Pedidos":
-                    console.log("esta nos pedidos");
-                    break;
-                case "#Opinioes":
-                    console.log("esta nas opinioes");
-                    break;
-                case "#Pagamentos":
-                    console.log("esta nos pagamentos");
-                    break;
-                case null:
-                    console.log("esta no null");
-                    break;
-                default:
-                    console.log("merda da grossa aconteceu, n sei pk");
-                    break;
-            }
-    });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     $("#tabContaDividida").css("background","rgba(0, 0, 0, 0.2)");
     darkBackGround("#pedidosButton");
     $('.userName').text(userName);
     
-    $('#pedidosButton').click(function() { selectPedidos(); });
+    $('#pedidosButton').click(function() { 
+        selectPedidos();
+        shakeFunction("#pedidosButton"+2);
+    });
     
-    $('#pagamentosButton').click(function() { selectPagamentos(); });
+    $('#pagamentosButton').click(function() { 
+        selectPagamentos();
+        shakeFunction("#pagamentosButton"+2);
+    });
     
-    $('#opinioesButton').click(function(){ selectOpinioes(); });    
+    $('#opinioesButton').click(function(){ 
+        selectOpinioes();
+        shakeFunction("#opinioesButton"+2);
+    });    
 
-    $('#empregadoButton').click(function(){ callEmpregado(); });
+    $('#empregadoButton').click(function(){
+        callEmpregado();
+    });
     
     $('#helpButton').click(function(){ showHelpInfo();});
     
@@ -139,11 +107,16 @@ $(document).ready(function() {
     });
     
     
-    $('#helpDiv').click(function(){ $('#helpDiv').hide(); });
-    
-    $('#closeHelpMenu').click(function(){
+    $('#helpDiv').click(function(){ 
         $('#helpDiv').hide();
+        $("#helpPedidos").hide();
+        $("#helpNull").hide();
+        $("#helpOpinioes").hide();
+        $("#helpConta").hide();
+
+
     });
+    
     
     
     
@@ -184,7 +157,9 @@ $(document).ready(function() {
 
 
 
-
+function shakeFunction(id){
+    $(id).effect("shake",{distance:2, times:2});
+}
 
 
 
@@ -625,8 +600,10 @@ function callEmpregado(){
         $("#empregadoButton").css("box-shadow","0em 0em 0em 0.2em rgba(97,172,255,1) inset, 0em 0em 3em -0em rgba(97,172,255,1) inset");
         /*     $("#empregadoButton").css("box-shadow","inset 0 0 0.8em rgba(97,172,255,1), 0 0 0.8em rgba(97,172,255,1)"); */
         $("#empregadoButton").css("border", "rgba(97,172,255,1) solid 2px");
-        /*     $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");
-        $("#empregadoImg").effect(shake, [duration])*/
+        /*     $('#empregadoButton').css("box-shadow","0px 0px 40px rgba(255, 255, 0, 1)");*/
+        
+        $("#empregadoImg").effect("shake",{distance:5, times:2});
+        
     }
     else {
         empregadoButtonActive= false;
@@ -642,6 +619,29 @@ function callEmpregado(){
 
 function showHelpInfo(){
     $('#helpDiv').show();
+    switch(currentSelected) {
+        case "#Pedidos":
+            $("#helpPedidos").show();
+            console.log("esta nos pedidos");
+            break;
+        case "#Opinioes":
+            $("#helpOpinioes").show();
+            console.log("esta nas opinioes");
+            break;
+        case "#Pagamentos":
+            $("#helpConta").show();
+
+            console.log("esta nos pagamentos");
+            break;
+        case null:
+            $("#helpNull").show();
+
+            console.log("esta no null");
+            break;
+        default:
+            console.log("Error");
+            break;
+    }
 }
 
 
@@ -658,7 +658,7 @@ function darkBackGround(id){
 //    $(id).css("background","rgba(255, 255, 255, 0.5)");
     
     $(id).css("box-shadow","0em 0em 0em 0.2em rgba(97,172,255,1) inset, 0em 0em 3em -0em rgba(97,172,255,1) inset");
-    $(id).css("border", "rgba(255,255,255) solid 2px");    
+    $(id).css("border", "rgba(255,255,255) solid 2px");  
 
 }
 function removeBackground(id){

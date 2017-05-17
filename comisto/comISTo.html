@@ -6,10 +6,10 @@
 <script type="text/javascript" src="jquery-ui.js"></script>
 
 <script type="text/javascript" src="functions.js"></script>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
 <link rel="stylesheet" href="bs.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
@@ -244,17 +244,17 @@
                     <div class="mainButtons">
                         <div class="circleButtons" id="pedidosButton">
 <!--                            <img src="images/pedido2.png" class="imageButtons">-->
-                            <i class="fa fa-book fa-4x" aria-hidden="true"></i>
+                            <i class="fa fa-book fa-4x" aria-hidden="true" id="pedidosButton2"></i>
                             <p align="center" class="textoNormal">Pedidos</p>
                         </div>
                         <div class="circleButtons" id="opinioesButton">
 <!--                            <img src="images/feedback1.png" class="imageButtons">-->
-                               <i class="fa fa-comments fa-4x" aria-hidden="true"></i>
+                               <i class="fa fa-comments fa-4x" aria-hidden="true" id="opinioesButton2"></i>
                             <p align="center" class="textoNormal">Opiniões</p>
                         </div>
                         <div class="circleButtons" id="pagamentosButton">
 <!--                            <img src="images/banknotes-xxl.png" class="imageButtons">-->
-                            <i class="fa fa-money fa-4x" aria-hidden="true"></i>
+                            <i class="fa fa-money fa-4x" aria-hidden="true" id="pagamentosButton2"></i>
                             <p align="center" class="textoNormal">Conta</p>
     
                         </div>
@@ -414,9 +414,18 @@
     </div>
     
     <div id="helpDiv" class="helpOverlay">
-        <div class="helpPedidos">
+        <div id="helpPedidos" class="overlayHelpDivs">
+        
+        </div>
+        <div id="helpConta" class = "overlayHelpDivs">
             
         </div>
+        <div id="helpOpinioes" class = "overlayHelpDivs">
+            
+        </div>
+        <div id="helpNull" class = "overlayHelpDivs">
+        </div>
+        
     </div>    
 </body>
 

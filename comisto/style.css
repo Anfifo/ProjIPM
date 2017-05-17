@@ -665,12 +665,11 @@ tr:nth-child(even) {
     font-size: 4.5vmin;
 }
 
-.helpPedidos {
+.overlayHelpDivs {
     height: 100%;
     width: 100%;
     margin: 0px;
     padding: 0px;
-    background: url(images/helpTest.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -690,4 +689,25 @@ tr:nth-child(even) {
 
 .pratoMenu {
     padding-left: 15%;
+}
+
+#helpPedidos {
+    background: url(images/helpTest.png) no-repeat center center fixed;
+    display:none;
+}
+
+#helpConta {
+    background: url(images/helpConta.png) no-repeat center center fixed;
+    display:none;
+}
+
+#helpOpinioes {
+    background: url(images/helpOpinioes.png) no-repeat center center fixed;
+
+    display:none
+}
+
+#helpNull {
+    background: url(images/helpNone.png) no-repeat center center fixed;
+    display:none;
 }
