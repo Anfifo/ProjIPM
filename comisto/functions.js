@@ -297,6 +297,9 @@ var pedidosPriceRelation = {
  *******************/
 //     REGISTO DOS PEDIDOS
 function storeOrder(foodId) {
+
+    updatePrato("klsjfgsjhfguohfsjbgsfg");
+
     var foodCount = parseInt(sessionStorage.getItem(foodId));
     sessionStorage.setItem(foodId, foodCount + 1);
 
@@ -786,3 +789,35 @@ function does_a_fucking_print() {
     //}
 }
 
+function updatePrato(foodId) {
+    if(foodId.localeCompare("Bitoque") == 0) {
+        $(".prato").css("background", "url(images/bitoque_final.png)");
+    }
+    else if(foodId.localeCompare("Lapas") == 0) {
+        $(".prato").css("background", "url(images/lapas_final.png)");
+    }
+    else if(foodId.localeCompare("Sopa da Pedra") == 0) {
+        $(".prato").css("background", "url(images/pedra_final.png)");
+    }
+    else if(foodId.localeCompare("Rabo de Boi") == 0) {
+        $(".prato").css("background", "url(images/boi_final.png)");
+    }
+    else if(foodId.localeCompare("Canja") == 0) {
+        $(".prato").css("background", "url(images/canja_final.png)");
+    }
+    else if(foodId.localeCompare("Peixe") == 0) {
+        $(".prato").css("background", "url(images/sopa_peixe_final.png)");
+    }
+    else if(foodId.localeCompare("Esparguete à Bolonhesa") == 0) {
+        $(".prato").css("background", "url(images/bolonhesa_final.png)");
+    }
+    else if(foodId.localeCompare("Burguellet") == 0) {
+
+        $(".prato").css("background", "url(images/burguer_final.png)");
+    }
+    else {
+        $(".prato").css("background", "url(images/plate.png)");
+    }
+
+    $(".prato").css("background-size", "100% 100%");
+}
