@@ -123,7 +123,7 @@ textarea{
     height: 70%;
 
     overflow: auto;
-    margin-right:3%;
+    padding-right:5%;
     border-top:1px solid black;
     padding-bottom: 0.3vh;
 }
@@ -174,8 +174,12 @@ textarea{
 .carta {
 /*    margin-top: 12%;*/
 /*    margin-left: 15%;*/
-    padding: 13%;
-    padding-left: 15%;
+/*    padding: 13%;*/
+    padding-left: 4vw;
+    padding-right: 4vw;
+    
+    padding-bottom: 9vh;
+    
     padding-top: 7vh;
     width: 100%;    
     height: 100%;
@@ -184,7 +188,6 @@ textarea{
 
 .titulo {
     font-size: 9vmin;
-    padding-top: 3%;
 }
 
 .infoCarta {
@@ -411,8 +414,13 @@ td.tableSelectButton{
 
 .BlocoNotasHeader {
     height:15%;
+    padding:1%;
     text-align: center;
-    padding-top: 1vh;
+    vertical-align: middle;
+    display:block;
+    
+    border:none;
+    margin:none;
 }
 
 .blocoNotasButton {
@@ -670,10 +678,15 @@ tr:nth-child(even) {
     width: 100%;
     margin: 0px;
     padding: 0px;
+    
+    overflow: hidden;
+    
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size:cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;   
 }
 
 #helpDiv {
@@ -692,22 +705,51 @@ tr:nth-child(even) {
 }
 
 #helpPedidos {
-    background: url(images/helpTest.png) no-repeat center center fixed;
+    background: url(images/helpTest.png);
     display:none;
+        -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 #helpConta {
     background: url(images/helpConta.png) no-repeat center center fixed;
     display:none;
+        -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 #helpOpinioes {
     background: url(images/helpOpinioes.png) no-repeat center center fixed;
 
     display:none
+        
+            -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 #helpNull {
     background: url(images/helpNone.png) no-repeat center center fixed;
     display:none;
+        -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.iconImagem {
+    font-size: 8vmin;
 }

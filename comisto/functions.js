@@ -114,10 +114,7 @@ $(document).ready(function() {
         $("#helpOpinioes").hide();
         $("#helpConta").hide();
 
-
     });
-    
-    
     
     
     
@@ -131,6 +128,7 @@ $(document).ready(function() {
     
     $(document).click(function() {
         console.log(clickCounter++);
+
     });
     
     
@@ -152,6 +150,8 @@ $(document).ready(function() {
     $("textarea").focusout(function(){
         $("textarea").css("background","rgba(200,200,200,0.3");
     });
+    
+    $( "#topLogo" ).draggable();
 
 });
 
@@ -626,6 +626,7 @@ function showHelpInfo(){
         case "#Pedidos":
             $("#helpPedidos").show();
             console.log("esta nos pedidos");
+            $("#pedirButton").show();
             break;
         case "#Opinioes":
             $("#helpOpinioes").show();
@@ -661,7 +662,7 @@ function darkBackGround(id){
 //    $(id).css("background","rgba(255, 255, 255, 0.5)");
     
     $(id).css("box-shadow","0em 0em 0em 0.2em rgba(97,172,255,1) inset, 0em 0em 3em -0em rgba(97,172,255,1) inset");
-    $(id).css("border", "rgba(255,255,255) solid 2px");  
+//    $(id).css("border", "rgba(255,255,255) solid 2px");  
 
 }
 function removeBackground(id){
