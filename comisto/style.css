@@ -187,7 +187,7 @@ textarea{
 }
 
 .titulo {
-    font-size: 9vmin;
+    font-size: 8vmin;
 }
 
 .infoCarta {
@@ -281,7 +281,9 @@ head {
     width: 100%;
     
     flex-wrap: nowrap;
-    flex-grow: 0;     /* do not grow   - initial value: 0 */
+    flex-grow: 0;    
+
+    
     flex-shrink: 0;
 
     margin-top: 1vh;

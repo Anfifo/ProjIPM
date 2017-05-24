@@ -16,10 +16,8 @@ $(document).ready(function() {
 
     
     
-    
     $("#tabContaDividida").css("background","rgba(0, 0, 0, 0.2)");
     darkBackGround("#pedidosButton");
-    $('.userName').text(userName);
     
     $('#pedidosButton').click(function() { 
         selectPedidos();
@@ -38,6 +36,7 @@ $(document).ready(function() {
 
     $('#empregadoButton').click(function(){
         callEmpregado();
+        
     });
     
     $('#helpButton').click(function(){ showHelpInfo();});
@@ -55,6 +54,7 @@ $(document).ready(function() {
         replaceDivs('#orderDiv','#confirmOrderDiv');
 //        $("#pedirButton").hide();
         $("#pedirButton").fadeOut(500);
+        console.log("Pedido concluido em " + clickCounter +" cliques.")
 
     });
     
@@ -95,17 +95,15 @@ $(document).ready(function() {
             $("#"+otherUsers[i]+"tabelaConta > tr[class=contabilizado]").remove();
         
         atualizadorPagamento();
+        
+        console.log("Pagamento efetuado aos " + clickCounter +" cliques.")
+
     });
     
 
-    $('#inputReviewButton').click(function() {
-        var review = $('#inputReviewText').val();
-        console.log(review);
-        $('#inputReviewText').val('');
-        addReview(userName, review);
-        //add review
-    });
-    
+
+    $("#tabContaDividida").css("background","rgba(0, 0, 0, 0.2)");
+    darkBackGround("#pedidosButton");
     
     $('#helpDiv').click(function(){ 
         $('#helpDiv').hide();
@@ -126,15 +124,6 @@ $(document).ready(function() {
     $('#5Star').click(function(){ chooseStars(5); });
     
     
-    $(document).click(function() {
-        console.log(clickCounter++);
-
-    });
-    
-    
-    
-    
-    
     
     addOtherUserPedido ("Maria",["Bitoque", "Água"]);
     addOtherUserPedido ("Joana",["Água","Burguellet"]);
@@ -151,15 +140,94 @@ $(document).ready(function() {
         $("textarea").css("background","rgba(200,200,200,0.3");
     });
     
-    $( "#topLogo" ).draggable();
 
+    $('.userName').text(userName);
+    
+    
+    $( "#topLogo" ).draggable();
+    
+        $('#inputReviewButton').click(function() {
+        var review = $('#inputReviewText').val();
+        console.log(review);
+        $('#inputReviewText').val('');
+        addReview(userName, review);
+        console.log("Opinião enviada aos " + clickCounter +" cliques.")
+
+        //add review
+    });
+    
+    
+    
+    $(document).click(function() {
+        console.log(clickCounter++);
+
+    });
+    
+
+    $('html').keypress(function (e) {
+        var key = e.which;
+        console.log("key pressed was " + key);
+        if(key == 92 )  // the enter key code
+        {
+            userName = prompt("Porfavor introduza o seu nome.","Nome");
+
+            if(userName===null)
+                userName="Eu";
+            $('.userName').text(userName);
+        }
+    });     
+    
+    
+    
+    
+
+    $(document).keydown(function (e) {
+        keys[e.which] = true;
+
+        printKeys();
+    });
+
+    $(document).keyup(function (e) {
+        delete keys[e.which];
+
+        printKeys();
+    });
+
+
+    
+    
+    
 });
+
+
+
+
+
+
+function printKeys() {
+    var test = '';
+    for (var i in keys) {
+        if (!keys.hasOwnProperty(i)) continue;
+        test += i;
+    }
+
+    if(test == "1332" || test == "3213"){
+        userName = prompt("Porfavor introduza o seu nome.","Nome");
+
+        if(userName===null)
+            userName="Eu";
+        $('.userName').text(userName);
+    }
+}
+
 
 
 
 function shakeFunction(id){
     $(id).effect("shake",{distance:2, times:2});
 }
+
+
 
 
 
@@ -170,11 +238,11 @@ function shakeFunction(id){
  *********************/
 var starNumber = "Não Avaliado";
 var empregadoButtonActive= false;
-var userName = "Duarte";
+var userName = "Eu";
 var currentSelected = '#Pedidos';
 var otherUsers = [];
 
-
+var keys = {};
 
 var OrderCounter = 0; //nao mexer nisto, este contador so tem UM proposito
 var totalPrice = 0;
